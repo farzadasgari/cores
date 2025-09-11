@@ -52,7 +52,7 @@ export const DashboardHeader = () => {
                                 </Avatar>
                             </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent className="w-56">
+                        <DropdownMenuContent className="w-56" align="end">
                             <DropdownMenuItem>
                                 <User className="h-4 w-4 mr-2" />
                                 Profile
