@@ -2,3 +2,4 @@ node_modules
 dist
 .gitignore
 src/components/ui
+src/lib

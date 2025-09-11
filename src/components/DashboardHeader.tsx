@@ -1,14 +1,14 @@
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import {
     DropdownMenu,
     DropdownMenuContent,
     DropdownMenuItem,
     DropdownMenuSeparator,
-    DropdownMenuTrigger
-} from "@/components/ui/dropdown-menu"
-import { Menu, Moon, Bell, Settings, User, LogOut } from "lucide-react"
+    DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Menu, Moon, Bell, Settings, User, LogOut } from 'lucide-react';
 
 export const DashboardHeader = () => {
     return (
@@ -23,7 +23,7 @@ export const DashboardHeader = () => {
 
                 {/* Right Section */}
                 <div className="flex items-center gap-2">
-                    <Button variant="ghost" size="sm" >
+                    <Button variant="ghost" size="sm">
                         <Moon className="h-5 w-5" />
                     </Button>
                     <Button variant="ghost" size="sm" className="relative">
@@ -32,38 +32,44 @@ export const DashboardHeader = () => {
                             3
                         </Badge>
                     </Button>
-                    <Button variant="ghost" size="sm" >
+                    <Button variant="ghost" size="sm">
                         <Settings className="h-5 w-5" />
                     </Button>
 
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="ghost" size="sm" className="relative">
+                            <Button
+                                variant="ghost"
+                                size="sm"
+                                className="relative"
+                            >
                                 <Avatar className="h-8 w-8">
-                                    <AvatarImage src="/cores/dashboard/avatar.webp" alt="profile" />
+                                    <AvatarImage
+                                        src="/cores/dashboard/avatar.webp"
+                                        alt="profile"
+                                    />
                                     <AvatarFallback>FA</AvatarFallback>
                                 </Avatar>
                             </Button>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent className="w-56">
                             <DropdownMenuItem>
-                                <User className="h-4 w-4 mr-2"/>
+                                <User className="h-4 w-4 mr-2" />
                                 Profile
                             </DropdownMenuItem>
                             <DropdownMenuItem>
-                                <Settings className="h-4 w-4 mr-2"/>
+                                <Settings className="h-4 w-4 mr-2" />
                                 Settings
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
                             <DropdownMenuItem>
-                                <LogOut className="h-4 w-4 mr-2"/>
+                                <LogOut className="h-4 w-4 mr-2" />
                                 Logout
                             </DropdownMenuItem>
                         </DropdownMenuContent>
-
                     </DropdownMenu>
                 </div>
             </div>
         </header>
-    )
-}
+    );
+};
