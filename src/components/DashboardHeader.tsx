@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { Menu, Moon, Bell, Settings } from "lucide-react"
 
 export const DashboardHeader = () => {
@@ -26,6 +27,12 @@ export const DashboardHeader = () => {
                     </Button>
                     <Button variant="ghost" size="sm" >
                         <Settings className="h-5 w-5" />
+                    </Button>
+                    <Button variant="ghost" size="sm" className="relative">
+                        <Avatar className="h-8 w-8">
+                            <AvatarImage src="/cores/dashboard/avatar.webp" alt="profile" />
+                            <AvatarFallback>FA</AvatarFallback>
+                        </Avatar>
                     </Button>
                 </div>
             </div>
