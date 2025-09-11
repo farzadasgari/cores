@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Menu, Moon, Bell } from "lucide-react"
+import { Menu, Moon, Bell, Settings } from "lucide-react"
 
 export const DashboardHeader = () => {
     return (
@@ -23,6 +23,9 @@ export const DashboardHeader = () => {
                         <Badge className="absolute -top-1 -right-1 h-4 w-4 rounded-full p-0 bg-rose-500 flex items-center justify-center">
                             3
                         </Badge>
+                    </Button>
+                    <Button variant="ghost" size="sm" >
+                        <Settings className="h-5 w-5" />
                     </Button>
                 </div>
             </div>
