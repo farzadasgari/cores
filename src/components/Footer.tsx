@@ -5,7 +5,7 @@ const Footer = () => {
                 CoreS | Admin Panel © 2025 All rights reserved. Made with ❤️ by
                 <a
                     className="pl-1.5 text-rose-600 hover:text-rose-400 duration-300"
-                    href="register"
+                    href="https://github.com/farzadasgari/"
                     target="_blank"
                 >
                     FarZad
