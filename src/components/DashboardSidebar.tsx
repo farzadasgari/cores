@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button"
+import { Collapsible, CollapsibleTrigger, CollapsibleContent } from "@/components/ui/collapsible";
 import {
     LayoutDashboard,
     Users,
@@ -9,7 +10,11 @@ import {
     Shield,
     TicketIcon,
     User,
-    Settings
+    Settings,
+    BarChart3,
+    ChevronDown,
+    BarChart2,
+    Activity,
 } from "lucide-react"
 
 export const DashboardSidebar = () => {
@@ -25,6 +30,11 @@ export const DashboardSidebar = () => {
         { id: "profile", label: "Profile", icon: User, href: "/profile" },
         { id: "settings", label: "Settings", icon: Settings, href: "/settings" },
     ];
+
+    const analyticsItems = [
+        { id: "analytics-overview", label: "Overview", icon: BarChart2, href: "/analytics/overview" },
+        { id: "analytics-realtime", label: "Real-Time", icon: Activity, href: "/analytics/realtime" },
+    ]
     return (
         <aside className="fixed left-0 top-16 z-50 h-[calc(100vh-4rem)] bg-background border-r border-rose-600 hover:border-rose-400 duration-300 overflow-hidden w-64">
 
@@ -40,6 +50,36 @@ export const DashboardSidebar = () => {
                         <span className="truncate">{item.label}</span>
                     </Button>
                 ))}
+
+                {/* Analytics */}
+                <div className="relative">
+                    <Collapsible>
+                        <CollapsibleTrigger asChild>
+                            <Button
+                                variant="ghost"
+                                className="w-full justify-start gap-3 h-10" >
+                                <BarChart3 className="h-5 w-5 flex-shrink-0" />
+                                <span className="truncate flex-1 text-left">Analytics</span>
+                                <ChevronDown className="h-4 w-4" />
+                            </Button>
+                        </CollapsibleTrigger>
+                        <CollapsibleContent className="overflow-hidden">
+                            <div className="space-y-1 mt-1">
+                                {analyticsItems.map((item) => (
+                                    <Button
+                                        key={item.id}
+                                        variant="ghost"
+                                        className="w-full justify-start gap-3 h-9 ml-6"
+                                    >
+                                        <item.icon className="h-4 w-4 flex-shrink-0" />
+                                        <span className="truncate text-sm">{item.label}</span>
+                                    </Button>
+                                ))}
+                            </div>
+                        </CollapsibleContent>
+                    </Collapsible>
+
+                </div>
 
             </nav>
         </aside>
