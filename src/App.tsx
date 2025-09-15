@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Index from './pages/Index';
-import Login from './pages/Login';
+import LoginPage from './pages/LoginPage';
 import Register from './pages/Register';
 import NotFound from './pages/NotFound';
 
@@ -13,7 +13,7 @@ function App() {
             <BrowserRouter basename="/cores">
                 <Routes>
                     <Route path="/" element={<Index />} />
-                    <Route path="/login" element={<Login />} />
+                    <Route path="/login" element={<LoginPage />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
