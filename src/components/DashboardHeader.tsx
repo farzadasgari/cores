@@ -22,6 +22,7 @@ import {
     LogOut,
     LogIn,
     UserPlus,
+    Github,
 } from 'lucide-react';
 
 export const DashboardHeader = () => {
@@ -127,6 +128,7 @@ export const DashboardHeader = () => {
                                 </Avatar>
                             </Button>
                         </DropdownMenuTrigger>
+
                         <DropdownMenuContent className="w-56" align="end">
                             <DropdownMenuItem>
                                 <User className="h-4 w-4 mr-2" />
@@ -136,18 +138,36 @@ export const DashboardHeader = () => {
                                 <Settings className="h-4 w-4 mr-2" />
                                 Settings
                             </DropdownMenuItem>
+
                             <DropdownMenuSeparator />
-                            <DropdownMenuItem>
-                                <UserPlus className="h-4 w-4 mr-2" />
-                                Register
+
+                            <DropdownMenuItem asChild>
+                                <a href="/cores/register">
+                                    <UserPlus className="h-4 w-4 mr-2" />
+                                    Register
+                                </a>
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <LogIn className="h-4 w-4 mr-2" />
-                                Login
+                            <DropdownMenuItem asChild>
+                                <a href="/cores/login">
+                                    <LogIn className="h-4 w-4 mr-2" />
+                                    Login
+                                </a>
                             </DropdownMenuItem>
                             <DropdownMenuItem>
                                 <LogOut className="h-4 w-4 mr-2" />
                                 Logout
+                            </DropdownMenuItem>
+
+                            <DropdownMenuSeparator />
+
+                            <DropdownMenuItem asChild>
+                                <a
+                                    href="https://github.com/farzadasgari/cores"
+                                    target="_blank"
+                                >
+                                    <Github className="h-4 w-4 mr-2" />
+                                    Repository
+                                </a>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
