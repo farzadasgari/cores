@@ -13,7 +13,16 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from '@/components/ui/popover';
-import { Menu, Moon, Bell, Settings, User, LogOut } from 'lucide-react';
+import {
+    Menu,
+    Moon,
+    Bell,
+    Settings,
+    User,
+    LogOut,
+    LogIn,
+    UserPlus,
+} from 'lucide-react';
 
 export const DashboardHeader = () => {
     const mockNotifications = [
@@ -128,6 +137,14 @@ export const DashboardHeader = () => {
                                 Settings
                             </DropdownMenuItem>
                             <DropdownMenuSeparator />
+                            <DropdownMenuItem>
+                                <UserPlus className="h-4 w-4 mr-2" />
+                                Register
+                            </DropdownMenuItem>
+                            <DropdownMenuItem>
+                                <LogIn className="h-4 w-4 mr-2" />
+                                Login
+                            </DropdownMenuItem>
                             <DropdownMenuItem>
                                 <LogOut className="h-4 w-4 mr-2" />
                                 Logout
