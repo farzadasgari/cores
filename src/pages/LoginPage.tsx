@@ -9,7 +9,8 @@ import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Mail, Lock, Eye, EyeClosed } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
+import { Mail, Lock, EyeClosed } from 'lucide-react';
 
 const LoginPage = () => {
     return (
@@ -78,14 +79,18 @@ const LoginPage = () => {
                             <div className="flex items-center justify-between">
                                 <div className="flex items-center space-x-2">
                                     <Checkbox id="remember" name="remember" />
-                                    <Label htmlFor="remember" className="text-sm font-normal">
+                                    <Label
+                                        htmlFor="remember"
+                                        className="text-sm font-normal"
+                                    >
                                         Remember me
                                     </Label>
                                 </div>
                                 <Button
                                     variant="link"
                                     size="sm"
-                                    className="px-0 font-normal">
+                                    className="px-0 font-normal"
+                                >
                                     Forgot Password?
                                 </Button>
                             </div>
@@ -95,6 +100,18 @@ const LoginPage = () => {
                                 Sign In
                             </Button>
                         </form>
+
+                        {/* Divider */}
+                        <div className="relative">
+                            <div className='absolute inset-0 flex items-center'>
+                                <Separator className='w-full' />
+                            </div>
+                            <div className='relative flex justify-center text-xs uppercase'>
+                                <span className='bg-card px-2 text-muted-foreground'>
+                                    Or continue with
+                                </span>
+                            </div>
+                        </div>
                     </CardContent>
                 </Card>
             </div>
