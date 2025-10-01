@@ -7,7 +7,8 @@ import {
 } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import { Mail, Lock } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Mail, Lock, Eye, EyeClosed } from 'lucide-react';
 
 const LoginPage = () => {
     return (
@@ -61,6 +62,15 @@ const LoginPage = () => {
                                         className="pl-10"
                                         required
                                     />
+                                    <Button
+                                        type="button"
+                                        variant="ghost"
+                                        size="sm"
+                                        className="absolute right-0 top-0 h-full px-3 hover:bg-transparent"
+                                    >
+                                        <EyeClosed className="h-4 w-4 text-slate-800"/>
+                                    </Button>
+
                                 </div>
                             </div>
                         </form>
