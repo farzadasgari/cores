@@ -8,6 +8,7 @@ import {
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Mail, Lock, Eye, EyeClosed } from 'lucide-react';
 
 const LoginPage = () => {
@@ -68,10 +69,25 @@ const LoginPage = () => {
                                         size="sm"
                                         className="absolute right-0 top-0 h-full px-3 hover:bg-transparent"
                                     >
-                                        <EyeClosed className="h-4 w-4 text-slate-800"/>
+                                        <EyeClosed className="h-4 w-4 text-slate-800" />
                                     </Button>
-
                                 </div>
+                            </div>
+
+                            {/* Remember Me & Forgot Password */}
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center space-x-2">
+                                    <Checkbox id="remember" name="remember" />
+                                    <Label htmlFor="remember" className="text-sm font-normal">
+                                        Remember me
+                                    </Label>
+                                </div>
+                                <Button
+                                variant="link"
+                                size="sm"
+                                className="px-0 font-normal">
+                                    Forgot Password?
+                                </Button>
                             </div>
                         </form>
                     </CardContent>
