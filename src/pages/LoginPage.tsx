@@ -10,9 +10,14 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Separator } from '@/components/ui/separator';
+
 import { Mail, Lock, EyeClosed, Github, Facebook, Chrome } from 'lucide-react';
 
+import { useNavigate } from 'react-router-dom';
+
 const LoginPage = () => {
+    const navigate = useNavigate();
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-background to-slate-200 flex items-center justify-center p-4">
             <div className="w-full max-w-md">
@@ -126,6 +131,18 @@ const LoginPage = () => {
                             <Button variant="outline" className="w-full">
                                 <Facebook className="h-4 w-4 mr-2" />
                                 Facebook
+                            </Button>
+                        </div>
+
+                        {/* Sign Up Link */}
+                        <div className='text-center text-sm'>
+                            <span className='text-muted-foreground'>Don't have an account? </span>
+                            <Button
+                                variant="link"
+                                className='px-0 font-normal'
+                                onClick={() => navigate('/register')}
+                            >
+                                Sign up
                             </Button>
                         </div>
                     </CardContent>
