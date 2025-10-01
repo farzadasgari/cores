@@ -83,12 +83,17 @@ const LoginPage = () => {
                                     </Label>
                                 </div>
                                 <Button
-                                variant="link"
-                                size="sm"
-                                className="px-0 font-normal">
+                                    variant="link"
+                                    size="sm"
+                                    className="px-0 font-normal">
                                     Forgot Password?
                                 </Button>
                             </div>
+
+                            {/* Login Button */}
+                            <Button type="submit" className="w-full">
+                                Sign In
+                            </Button>
                         </form>
                     </CardContent>
                 </Card>
