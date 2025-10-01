@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Separator } from '@/components/ui/separator';
-import { Mail, Lock, EyeClosed } from 'lucide-react';
+import { Mail, Lock, EyeClosed, Github, Facebook, Chrome } from 'lucide-react';
 
 const LoginPage = () => {
     return (
@@ -103,14 +103,30 @@ const LoginPage = () => {
 
                         {/* Divider */}
                         <div className="relative">
-                            <div className='absolute inset-0 flex items-center'>
-                                <Separator className='w-full' />
+                            <div className="absolute inset-0 flex items-center">
+                                <Separator className="w-full" />
                             </div>
-                            <div className='relative flex justify-center text-xs uppercase'>
-                                <span className='bg-card px-2 text-muted-foreground'>
+                            <div className="relative flex justify-center text-xs uppercase">
+                                <span className="bg-card px-2 text-muted-foreground">
                                     Or continue with
                                 </span>
                             </div>
+                        </div>
+
+                        {/* Social Login */}
+                        <div className="grid grid-cols-3 gap-2">
+                            <Button variant="outline" className="w-full">
+                                <Chrome className="h-4 w-4 mr-2" />
+                                Google
+                            </Button>
+                            <Button variant="outline" className="w-full">
+                                <Github className="h-4 w-4 mr-2" />
+                                Github
+                            </Button>
+                            <Button variant="outline" className="w-full">
+                                <Facebook className="h-4 w-4 mr-2" />
+                                Facebook
+                            </Button>
                         </div>
                     </CardContent>
                 </Card>
