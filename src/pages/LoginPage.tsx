@@ -135,11 +135,13 @@ const LoginPage = () => {
                         </div>
 
                         {/* Sign Up Link */}
-                        <div className='text-center text-sm'>
-                            <span className='text-muted-foreground'>Don't have an account? </span>
+                        <div className="text-center text-sm">
+                            <span className="text-muted-foreground">
+                                Don't have an account?{' '}
+                            </span>
                             <Button
                                 variant="link"
-                                className='px-0 font-normal'
+                                className="px-0 font-normal"
                                 onClick={() => navigate('/register')}
                             >
                                 Sign up
@@ -147,6 +149,19 @@ const LoginPage = () => {
                         </div>
                     </CardContent>
                 </Card>
+
+                {/* Footer */}
+                <div className="text-center mt-8 text-xs text-muted-foreground">
+                    CoreS | Admin Panel © 2025 All rights reserved. Made with
+                    ❤️ by
+                    <a
+                        className="pl-1.5 text-rose-600 hover:text-rose-400 duration-300"
+                        href="https://github.com/farzadasgari/"
+                        target="_blank"
+                    >
+                        FarZad
+                    </a>
+                </div>
             </div>
         </div>
     );
