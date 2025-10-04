@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
     Card,
     CardContent,
@@ -11,12 +12,22 @@ import { Button } from '@/components/ui/button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Separator } from '@/components/ui/separator';
 
-import { Mail, Lock, EyeClosed, Github, Facebook, Chrome } from 'lucide-react';
+import {
+    Mail,
+    Lock,
+    Eye,
+    EyeClosed,
+    Github,
+    Facebook,
+    Chrome,
+} from 'lucide-react';
 
 import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
     const navigate = useNavigate();
+
+    const [showPassword, setShowPassword] = useState(false);
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-background to-slate-200 flex items-center justify-center p-4">
@@ -64,7 +75,9 @@ const LoginPage = () => {
                                     <Input
                                         id="password"
                                         name="password"
-                                        type="password"
+                                        type={
+                                            showPassword ? 'text' : 'password'
+                                        }
                                         placeholder="Enter your password"
                                         className="pl-10"
                                         required
@@ -73,9 +86,16 @@ const LoginPage = () => {
                                         type="button"
                                         variant="ghost"
                                         size="sm"
-                                        className="absolute right-0 top-0 h-full px-3 hover:bg-transparent"
+                                        className="absolute right-0 top-0 h-full px-3"
+                                        onClick={() =>
+                                            setShowPassword(!showPassword)
+                                        }
                                     >
-                                        <EyeClosed className="h-4 w-4 text-slate-800" />
+                                        {showPassword ? (
+                                            <EyeClosed className="h-4 w-4 text-slate-800" />
+                                        ) : (
+                                            <Eye className="h-4 w-4 text-slate-800" />
+                                        )}
                                     </Button>
                                 </div>
                             </div>
