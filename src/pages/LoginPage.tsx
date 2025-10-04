@@ -31,7 +31,6 @@ const LoginPage = () => {
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Login Attempt');
         navigate('/');
     };
 
