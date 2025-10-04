@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
     Card,
     CardContent,
@@ -29,6 +29,12 @@ const LoginPage = () => {
 
     const [showPassword, setShowPassword] = useState(false);
 
+    const handleLogin = (e: React.FormEvent) => {
+        e.preventDefault();
+        console.log('Login Attempt');
+        navigate('/');
+    };
+
     return (
         <div className="min-h-screen bg-gradient-to-br from-background to-slate-200 flex items-center justify-center p-4">
             <div className="w-full max-w-md">
@@ -50,7 +56,7 @@ const LoginPage = () => {
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                        <form className="space-y-4">
+                        <form className="space-y-4" onSubmit={handleLogin}>
                             {/* Email Field */}
                             <div className="space-y-2">
                                 <Label htmlFor="email">Email</Label>
