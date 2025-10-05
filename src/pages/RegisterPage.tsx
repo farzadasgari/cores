@@ -25,7 +25,7 @@ import {
 
 import { useNavigate } from 'react-router-dom';
 
-const Register = () => {
+const RegisterPage = () => {
     const navigate = useNavigate();
 
     const [showPassword, setShowPassword] = useState(false);
@@ -224,4 +224,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default RegisterPage;
