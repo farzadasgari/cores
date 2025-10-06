@@ -6,7 +6,7 @@ import { DashboardContent } from './DashboardContent';
 // import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
-    const currentPage = "dashboard";
+    const currentPage = 'dashboard';
     // const [currentPage, setCurrentPage] = useState("dashboard");
     // const navigate = useNavigate();
 
@@ -19,7 +19,6 @@ const Dashboard = () => {
     //             break
     //     }
     // }
-
 
     return (
         <div className="min-h-screen">
