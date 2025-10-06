@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="bg-slate-100 border-t border-rose-600 hover:border-rose-400 duration-300 px-6 py-4">
+        <footer className="bg-slate-100 border-t duration-300 px-6 py-4">
             <div className="text-center text-sm">
                 CoreS | Admin Panel © 2025 All rights reserved. Made with ❤️ by
                 <a
