@@ -31,7 +31,7 @@ const stats = [
         change: '-2.1%',
         trend: 'down',
         icon: ShoppingCart,
-        color: 'text-orange-500',
+        color: 'text-rose-500',
     },
     {
         title: 'Rate',
@@ -44,26 +44,43 @@ const stats = [
 ];
 export const StatsCards = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Card className="hover:shadow-lg hover:scale-[1.01] transition-all duration-300">
-                <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                        <div className="p-2 rounded-lg bg-muted text-rose-500">
-                            <CreditCard className="h-5 w-5" />
-                        </div>
-                        <div className="flex items-center text-sm text-red-500">
-                            <TrendingDown className="h-4 w-4 mr-1.5" />
-                            -2.5%
-                        </div>
-                    </div>
-                    <div>
-                        <h3 className="text-2xl font-bold mb-1">$124,592</h3>
-                        <p className="text-muted-foreground text-sm">
-                            Total Revenue
-                        </p>
-                    </div>
-                </CardContent>
-            </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, index) => {
+                const Icon = stat.icon;
+                const TrendIcon =
+                    stat.trend == 'up' ? TrendingUp : TrendingDown;
+
+                return (
+                    <Card
+                        key={index}
+                        className="hover:shadow-lg hover:scale-[1.01] transition-all duration-300"
+                    >
+                        <CardContent className="px-8 py-1">
+                            <div className="flex items-center justify-between mb-4">
+                                <div
+                                    className={`p-2 rounded-lg bg-muted ${stat.color}`}
+                                >
+                                    <Icon className="h-5 w-5" />
+                                </div>
+                                <div
+                                    className={`flex items-center text-sm ${stat.trend == 'up' ? 'text-emerald-500' : 'text-red-500'}`}
+                                >
+                                    <TrendIcon className="h-4 w-4 mr-1.5" />
+                                    {stat.change}
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-bold mb-1">
+                                    {stat.value}
+                                </h3>
+                                <p className="text-muted-foreground text-md">
+                                    {stat.title}
+                                </p>
+                            </div>
+                        </CardContent>
+                    </Card>
+                );
+            })}
         </div>
     );
 };
