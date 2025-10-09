@@ -1,5 +1,7 @@
 import { WelcomeSection } from '@/components/Dashboard/WelcomeSection';
 import { StatsCards } from '@/components/Dashboard/StatsCards';
+import { ChartWidget } from '@/components/Dashboard/ChartWidget';
+
 interface DashboardContentProps {
     currentPage: string;
 }
@@ -15,6 +17,14 @@ export const DashboardContent = ({ currentPage }: DashboardContentProps) => {
 
                         {/* Statistical Cards */}
                         <StatsCards />
+
+                        {/* Main Grid */}
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div className="lg:col-span-3 space-y-6">
+                                {/* Charts */}
+                                <ChartWidget />
+                            </div>
+                        </div>
                     </div>
                 );
         }
