@@ -12,26 +12,20 @@ export const ChartWidget = () => {
                 <CardTitle>Performance Overview</CardTitle>
                 <div className="flex gap-2">
                     <Button
-                        variant="outline"
+                        variant={
+                            activeMetric === 'revenue' ? 'default' : 'outline'
+                        }
                         size="sm"
                         onClick={() => setActiveMetric('revenue')}
-                        className={
-                            activeMetric === 'revenue'
-                                ? 'bg-rose-600 hover:bg-rose-500 text-white hover:text-white'
-                                : ''
-                        }
                     >
                         Revenue
                     </Button>
                     <Button
-                        variant="outline"
+                        variant={
+                            activeMetric === 'users' ? 'default' : 'outline'
+                        }
                         size="sm"
                         onClick={() => setActiveMetric('users')}
-                        className={
-                            activeMetric === 'users'
-                                ? 'bg-rose-600 hover:bg-rose-500 text-white hover:text-white'
-                                : ''
-                        }
                     >
                         Users
                     </Button>
