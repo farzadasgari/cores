@@ -3,6 +3,53 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 
+const recentOrders = [
+    {
+        id: '#2852',
+        user: {
+            name: 'John Doe',
+            avatar: '/cores/dashboard/avatar.web',
+        },
+        product: 'Pro Plan',
+        amount: '$69.00',
+        status: 'completed',
+        date: '2025-10-12',
+    },
+    {
+        id: '#2853',
+        user: {
+            name: 'Sarah Johnson',
+            avatar: '/cores/dashboard/avatar.web',
+        },
+        product: 'Premium Plan',
+        amount: '$99.00',
+        status: 'pending',
+        date: '2025-10-12',
+    },
+    {
+        id: '#2854',
+        user: {
+            name: 'Mike Wilson',
+            avatar: '/cores/dashboard/avatar.web',
+        },
+        product: 'Basic Plan',
+        amount: '$39.00',
+        status: 'failed',
+        date: '2025-10-12',
+    },
+    {
+        id: '#2855',
+        user: {
+            name: 'John Smith',
+            avatar: '/cores/dashboard/avatar.web',
+        },
+        product: 'Enterprise Plan',
+        amount: '$199.00',
+        status: 'completed',
+        date: '2025-10-12',
+    },
+];
+
 export const TableWidget = () => {
     return (
         <Card>
