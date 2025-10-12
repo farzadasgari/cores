@@ -8,7 +8,7 @@ const recentOrders = [
         id: '#2852',
         user: {
             name: 'John Doe',
-            avatar: '/cores/dashboard/avatar.web',
+            avatar: '/cores/dashboard/avatar3.webp',
         },
         product: 'Pro Plan',
         amount: '$69.00',
@@ -19,7 +19,7 @@ const recentOrders = [
         id: '#2853',
         user: {
             name: 'Sarah Johnson',
-            avatar: '/cores/dashboard/avatar.web',
+            avatar: '/cores/dashboard/avatar.webp',
         },
         product: 'Premium Plan',
         amount: '$99.00',
@@ -29,8 +29,8 @@ const recentOrders = [
     {
         id: '#2854',
         user: {
-            name: 'Mike Wilson',
-            avatar: '/cores/dashboard/avatar.web',
+            name: 'Farzad Asgari',
+            avatar: '..',
         },
         product: 'Basic Plan',
         amount: '$39.00',
@@ -41,7 +41,7 @@ const recentOrders = [
         id: '#2855',
         user: {
             name: 'John Smith',
-            avatar: '/cores/dashboard/avatar.web',
+            avatar: '/cores/dashboard/avatar2.webp',
         },
         product: 'Enterprise Plan',
         amount: '$199.00',
@@ -52,16 +52,16 @@ const recentOrders = [
 
 const getStatusColor = (status: string) => {
     switch (status) {
-        case "completed":
-            return "bg-emeral-100 text-emerald-800";
-        case "pending":
-            return "bg-amber-100 text-amber-800";
-        case "failed":
-            return "bg-red-100 text-red-800";
+        case 'completed':
+            return 'bg-emerald-200 text-emerald-900';
+        case 'pending':
+            return 'bg-amber-200 text-amber-900';
+        case 'failed':
+            return 'bg-red-200 text-red-900';
         default:
-            return "bg-slate-100 text-slate-800"
+            return 'bg-slate-200 text-slate-900';
     }
-}
+};
 
 export const TableWidget = () => {
     return (
@@ -74,29 +74,45 @@ export const TableWidget = () => {
             </CardHeader>
             <CardContent>
                 <div className="space-y-4">
-                    <div className="flex items-center justify-between p-4 rounded-lg border hover:bg-accent/50 transition-colors">
-                        <div className="flex items-center gap-4">
-                            <Avatar className="h-10 w-10">
-                                <AvatarImage src="/cores/dashboard/avatar.webp" />
-                                <AvatarFallback>JD</AvatarFallback>
-                            </Avatar>
-                            <div>
-                                <p className="font-medium">John Doe</p>
-                                <p className="text-sm text-muted-foreground">
-                                    Basic Plan
-                                </p>
+                    {recentOrders.map((order) => (
+                        <div
+                            key={order.id}
+                            className="flex items-center justify-between p-4 rounded-lg border hover:bg-accent/50 transition-colors"
+                        >
+                            <div className="flex items-center gap-4">
+                                <Avatar className="h-10 w-10">
+                                    <AvatarImage src={order.user.avatar} />
+                                    <AvatarFallback>
+                                        {order.user.name
+                                            .split(' ')
+                                            .map((n) => n[0])
+                                            .join('')}
+                                    </AvatarFallback>
+                                </Avatar>
+                                <div>
+                                    <p className="font-medium">
+                                        {order.user.name}
+                                    </p>
+                                    <p className="text-sm text-muted-foreground">
+                                        {order.product}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                <div className="text-right">
+                                    <p className="font-semibold">
+                                        {order.amount}
+                                    </p>
+                                    <p className="text-sm text-muted-foreground">
+                                        {order.date}
+                                    </p>
+                                </div>
+                                <Badge className={getStatusColor(order.status)}>
+                                    {order.status}
+                                </Badge>
                             </div>
                         </div>
-                        <div className="flex items-center gap-4">
-                            <div className="text-right">
-                                <p className="font-semibold">$39.0</p>
-                                <p className="text-sm text-muted-foreground">
-                                    2025-10-12
-                                </p>
-                            </div>
-                            <Badge>Completed</Badge>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </CardContent>
         </Card>
