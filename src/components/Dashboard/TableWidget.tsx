@@ -12,7 +12,7 @@ const recentOrders = [
         },
         product: 'Pro Plan',
         amount: '$69.00',
-        status: 'completed',
+        status: 'unknown',
         date: '2025-10-12',
     },
     {
@@ -49,6 +49,19 @@ const recentOrders = [
         date: '2025-10-12',
     },
 ];
+
+const getStatusColor = (status: string) => {
+    switch (status) {
+        case "completed":
+            return "bg-emeral-100 text-emerald-800";
+        case "pending":
+            return "bg-amber-100 text-amber-800";
+        case "failed":
+            return "bg-red-100 text-red-800";
+        default:
+            return "bg-slate-100 text-slate-800"
+    }
+}
 
 export const TableWidget = () => {
     return (
