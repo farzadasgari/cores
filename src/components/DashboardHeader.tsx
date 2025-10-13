@@ -65,7 +65,7 @@ export const DashboardHeader = () => {
                                 className="relative"
                             >
                                 <Bell className="h-5 w-5" />
-                                <Badge className="absolute -top-1 -right-1 h-4 w-4 rounded-full p-0 bg-rose-500 flex items-center justify-center">
+                                <Badge className="absolute -top-1 -right-1 h-4 w-4 rounded-full p-0 bg-primary flex items-center justify-center">
                                     3
                                 </Badge>
                             </Button>
@@ -82,7 +82,7 @@ export const DashboardHeader = () => {
                                     >
                                         <div className="flex items-start gap-3">
                                             <div
-                                                className={`w-2 h-2 rounded-full mt-2 ${notification.unread ? 'bg-rose-500' : 'bg-slate-300'}`}
+                                                className={`w-2 h-2 rounded-full mt-2 ${notification.unread ? 'bg-primary' : 'bg-slate-300'}`}
                                             />
                                             <div className="flex-1">
                                                 <p className="text-sm font-medium">
