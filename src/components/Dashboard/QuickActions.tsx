@@ -32,7 +32,7 @@ export const QuickActions = () => {
                             <Button
                                 key={index}
                                 variant="outline"
-                                className="h-20 flex flex-col gap-2 hover:bg-accent"
+                                className="h-20 flex flex-col gap-2 hover:bg-accent cursor-pointer"
                             >
                                 <div
                                     className={`p-2 rounded-lg text-white ${action.color}`}
