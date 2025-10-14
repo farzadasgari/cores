@@ -3,6 +3,7 @@ import { StatsCards } from '@/components/Dashboard/StatsCards';
 import { ChartWidget } from '@/components/Dashboard/ChartWidget';
 import { TableWidget } from '@/components/Dashboard/TableWidget';
 import { QuickActions } from '@/components/Dashboard/QuickActions';
+import { ActivityFeed } from '@/components/Dashboard/ActivityFeed';
 
 interface DashboardContentProps {
     currentPage: string;
@@ -29,7 +30,11 @@ export const DashboardContent = ({ currentPage }: DashboardContentProps) => {
                                 <TableWidget />
                             </div>
                             <div className="space-y-6">
+                                {/* Actions */}
                                 <QuickActions />
+
+                                {/* Activities */}
+                                <ActivityFeed />
                             </div>
                         </div>
                     </div>
