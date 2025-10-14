@@ -50,6 +50,19 @@ const activities = [
     }
 ]
 
+const getTypeColor = (type: string) => {
+    switch (type) {
+        case 'Complete':
+            return 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900';
+        case 'Update':
+            return 'bg-amber-100 hover:bg-amber-200 text-amber-900';
+        case 'Create':
+            return 'bg-red-100 hover:bg-red-200 text-red-900';
+        default:
+            return 'bg-slate-100 hover:bg-slate-200 text-slate-900';
+    }
+};
+
 
 export const ActivityFeed = () => {
     return (
