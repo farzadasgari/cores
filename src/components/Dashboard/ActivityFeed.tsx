@@ -55,9 +55,9 @@ const getTypeColor = (type: string) => {
         case 'Complete':
             return 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900';
         case 'Update':
-            return 'bg-amber-100 hover:bg-amber-200 text-amber-900';
+            return 'bg-sky-100 hover:bg-sky-200 text-sky-900';
         case 'Create':
-            return 'bg-red-100 hover:bg-red-200 text-red-900';
+            return 'bg-violet-100 hover:bg-violet-200 text-violet-900';
         default:
             return 'bg-slate-100 hover:bg-slate-200 text-slate-900';
     }
@@ -75,26 +75,38 @@ export const ActivityFeed = () => {
             </CardHeader>
             <CardContent>
                 <div className="space-y-4">
-                    <div className="flex items-start gap-3 rounded-lg hover:bg-accent/50">
-                        <Avatar className="h-8 w-8 flex-shrink-0">
-                            <AvatarImage src="/cores/dashboard/avatar2.webp" />
-                            <AvatarFallback>FA</AvatarFallback>
-                        </Avatar>
-                        <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-1 justify-between">
-                                <span className="text-sm font-medium">Farzad Asgari</span>
-                                <Badge className="text-xs">
-                                    Upload
-                                </Badge>
+                    {
+                        activities.map((activity) => (
+                            <div
+                                key={activity.id}
+                                className="flex items-start gap-3 p-3 border rounded-lg hover:bg-accent/50"
+                            >
+                                <Avatar className="h-8 w-8 flex-shrink-0">
+                                    <AvatarImage src={activity.user.avatar} />
+                                    <AvatarFallback>
+                                        {activity.user.name
+                                            .split(' ')
+                                            .map((n) => n[0])
+                                            .join('')}
+                                    </AvatarFallback>
+                                </Avatar>
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-2 mb-1 justify-between">
+                                        <span className="text-sm font-medium">{activity.user.name}</span>
+                                        <Badge className={`text-xs ${getTypeColor(activity.type)}`}>
+                                            {activity.type}
+                                        </Badge>
+                                    </div>
+                                    <p className="text-sm text-muted-foreground">
+                                        Lorem ipsum dolor sit amet <span className="font-medium">consectetur adipisicing elit.</span>
+                                    </p>
+                                    <p className="text-xs text-muted-foreground mt-1">
+                                        2 hours ago
+                                    </p>
+                                </div>
                             </div>
-                            <p className="text-sm text-muted-foreground">
-                                Lorem ipsum dolor sit amet <span className="font-medium">consectetur adipisicing elit.</span>
-                            </p>
-                            <p className="text-xs text-muted-foreground mt-1">
-                                2 hours ago
-                            </p>
-                        </div>
-                    </div>
+                        ))
+                    }
                 </div>
             </CardContent>
         </Card>

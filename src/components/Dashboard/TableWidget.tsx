@@ -12,7 +12,7 @@ const recentOrders = [
         },
         product: 'Pro Plan',
         amount: '$69.00',
-        status: 'unknown',
+        status: 'Unknown',
         date: '2025-10-12',
     },
     {
@@ -23,7 +23,7 @@ const recentOrders = [
         },
         product: 'Premium Plan',
         amount: '$99.00',
-        status: 'pending',
+        status: 'Pending',
         date: '2025-10-12',
     },
     {
@@ -34,7 +34,7 @@ const recentOrders = [
         },
         product: 'Basic Plan',
         amount: '$39.00',
-        status: 'failed',
+        status: 'Failed',
         date: '2025-10-12',
     },
     {
@@ -45,18 +45,18 @@ const recentOrders = [
         },
         product: 'Enterprise Plan',
         amount: '$199.00',
-        status: 'completed',
+        status: 'Completed',
         date: '2025-10-12',
     },
 ];
 
 const getStatusColor = (status: string) => {
     switch (status) {
-        case 'completed':
+        case 'Completed':
             return 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900';
-        case 'pending':
+        case 'Pending':
             return 'bg-amber-100 hover:bg-amber-200 text-amber-900';
-        case 'failed':
+        case 'Failed':
             return 'bg-red-100 hover:bg-red-200 text-red-900';
         default:
             return 'bg-slate-100 hover:bg-slate-200 text-slate-900';
