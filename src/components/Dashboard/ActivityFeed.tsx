@@ -1,54 +1,54 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Clock } from "lucide-react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Clock } from 'lucide-react';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Badge } from '@/components/ui/badge';
 
 const activities = [
     {
         id: 1,
         user: {
-            name: "Elena Delgado",
+            name: 'Elena Delgado',
             avatar: '/cores/avatar/avatar4.webp',
         },
-        action: "Created a new project",
-        target: "Website Redesign",
-        time: "2 minutes ago",
-        type: "Create"
+        action: 'Created a new project',
+        target: 'Website Redesign',
+        time: '2 minutes ago',
+        type: 'Create',
     },
     {
         id: 2,
         user: {
-            name: "Marcus Okafor",
+            name: 'Marcus Okafor',
             avatar: '..',
         },
-        action: "Updated user profile",
-        target: "Account Settings",
-        time: "15 minutes ago",
-        type: "Update"
+        action: 'Updated user profile',
+        target: 'Account Settings',
+        time: '15 minutes ago',
+        type: 'Update',
     },
     {
         id: 3,
         user: {
-            name: "Priya Chen",
+            name: 'Priya Chen',
             avatar: '/cores/avatar/avatar5.webp',
         },
-        action: "Completed task",
-        target: "Database Migration",
-        time: "1 hour ago",
-        type: "Complete"
+        action: 'Completed task',
+        target: 'Database Migration',
+        time: '1 hour ago',
+        type: 'Complete',
     },
     {
         id: 4,
         user: {
-            name: "Jordan Thompson",
+            name: 'Jordan Thompson',
             avatar: '/cores/avatar/avatar6.webp',
         },
-        action: "Uploaded file",
-        target: "Design assets.zip",
-        time: "2 hours ago",
-        type: "Upload"
-    }
-]
+        action: 'Uploaded file',
+        target: 'Design assets.zip',
+        time: '2 hours ago',
+        type: 'Upload',
+    },
+];
 
 const getTypeColor = (type: string) => {
     switch (type) {
@@ -63,7 +63,6 @@ const getTypeColor = (type: string) => {
     }
 };
 
-
 export const ActivityFeed = () => {
     return (
         <Card>
@@ -75,40 +74,45 @@ export const ActivityFeed = () => {
             </CardHeader>
             <CardContent>
                 <div className="space-y-4">
-                    {
-                        activities.map((activity) => (
-                            <div
-                                key={activity.id}
-                                className="flex items-start gap-3 p-3 border rounded-lg hover:bg-accent/50"
-                            >
-                                <Avatar className="h-8 w-8 flex-shrink-0">
-                                    <AvatarImage src={activity.user.avatar} />
-                                    <AvatarFallback>
-                                        {activity.user.name
-                                            .split(' ')
-                                            .map((n) => n[0])
-                                            .join('')}
-                                    </AvatarFallback>
-                                </Avatar>
-                                <div className="flex-1 min-w-0">
-                                    <div className="flex items-center gap-2 mb-1 justify-between">
-                                        <span className="text-sm font-medium">{activity.user.name}</span>
-                                        <Badge className={`text-xs ${getTypeColor(activity.type)}`}>
-                                            {activity.type}
-                                        </Badge>
-                                    </div>
-                                    <p className="text-sm text-muted-foreground">
-                                        Lorem ipsum dolor sit amet <span className="font-medium">consectetur adipisicing elit.</span>
-                                    </p>
-                                    <p className="text-xs text-muted-foreground mt-1">
-                                        2 hours ago
-                                    </p>
+                    {activities.map((activity) => (
+                        <div
+                            key={activity.id}
+                            className="flex items-start gap-3 p-3 border rounded-lg hover:bg-accent/50"
+                        >
+                            <Avatar className="h-8 w-8 flex-shrink-0">
+                                <AvatarImage src={activity.user.avatar} />
+                                <AvatarFallback>
+                                    {activity.user.name
+                                        .split(' ')
+                                        .map((n) => n[0])
+                                        .join('')}
+                                </AvatarFallback>
+                            </Avatar>
+                            <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 mb-1 justify-between">
+                                    <span className="text-sm font-medium">
+                                        {activity.user.name}
+                                    </span>
+                                    <Badge
+                                        className={`text-xs ${getTypeColor(activity.type)}`}
+                                    >
+                                        {activity.type}
+                                    </Badge>
                                 </div>
+                                <p className="text-sm text-muted-foreground">
+                                    Lorem ipsum dolor sit amet{' '}
+                                    <span className="font-medium">
+                                        consectetur adipisicing elit.
+                                    </span>
+                                </p>
+                                <p className="text-xs text-muted-foreground mt-1">
+                                    2 hours ago
+                                </p>
                             </div>
-                        ))
-                    }
+                        </div>
+                    ))}
                 </div>
             </CardContent>
         </Card>
-    )
-}
+    );
+};
