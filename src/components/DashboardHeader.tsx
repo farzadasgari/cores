@@ -121,7 +121,7 @@ export const DashboardHeader = () => {
                             >
                                 <Avatar className="h-8 w-8">
                                     <AvatarImage
-                                        src="/cores/dashboard/avatar.webp"
+                                        src="/cores/avatar/avatar.webp"
                                         alt="profile"
                                     />
                                     <AvatarFallback>FA</AvatarFallback>

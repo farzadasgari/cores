@@ -8,7 +8,7 @@ const recentOrders = [
         id: '#2852',
         user: {
             name: 'John Doe',
-            avatar: '/cores/dashboard/avatar3.webp',
+            avatar: '/cores/avatar/avatar3.webp',
         },
         product: 'Pro Plan',
         amount: '$69.00',
@@ -19,7 +19,7 @@ const recentOrders = [
         id: '#2853',
         user: {
             name: 'Sarah Johnson',
-            avatar: '/cores/dashboard/avatar.webp',
+            avatar: '/cores/avatar/avatar.webp',
         },
         product: 'Premium Plan',
         amount: '$99.00',
@@ -41,7 +41,7 @@ const recentOrders = [
         id: '#2855',
         user: {
             name: 'John Smith',
-            avatar: '/cores/dashboard/avatar2.webp',
+            avatar: '/cores/avatar/avatar2.webp',
         },
         product: 'Enterprise Plan',
         amount: '$199.00',

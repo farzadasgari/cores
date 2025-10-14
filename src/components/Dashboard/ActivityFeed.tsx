@@ -3,6 +3,54 @@ import { Clock } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 
+const activities = [
+    {
+        id: 1,
+        user: {
+            name: "Elena Delgado",
+            avatar: '/cores/avatar/avatar4.webp',
+        },
+        action: "Created a new project",
+        target: "Website Redesign",
+        time: "2 minutes ago",
+        type: "Create"
+    },
+    {
+        id: 2,
+        user: {
+            name: "Marcus Okafor",
+            avatar: '..',
+        },
+        action: "Updated user profile",
+        target: "Account Settings",
+        time: "15 minutes ago",
+        type: "Update"
+    },
+    {
+        id: 3,
+        user: {
+            name: "Priya Chen",
+            avatar: '/cores/avatar/avatar5.webp',
+        },
+        action: "Completed task",
+        target: "Database Migration",
+        time: "1 hour ago",
+        type: "Complete"
+    },
+    {
+        id: 4,
+        user: {
+            name: "Jordan Thompson",
+            avatar: '/cores/avatar/avatar6.webp',
+        },
+        action: "Uploaded file",
+        target: "Design assets.zip",
+        time: "2 hours ago",
+        type: "Upload"
+    }
+]
+
+
 export const ActivityFeed = () => {
     return (
         <Card>
