@@ -100,13 +100,13 @@ export const ActivityFeed = () => {
                                     </Badge>
                                 </div>
                                 <p className="text-sm text-muted-foreground">
-                                    Lorem ipsum dolor sit amet{' '}
+                                    {activity.action}{' '}
                                     <span className="font-medium">
-                                        consectetur adipisicing elit.
+                                        {activity.target}
                                     </span>
                                 </p>
                                 <p className="text-xs text-muted-foreground mt-1">
-                                    2 hours ago
+                                    {activity.time}
                                 </p>
                             </div>
                         </div>
