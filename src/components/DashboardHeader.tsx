@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -24,10 +25,21 @@ import {
     LogIn,
     UserPlus,
     Github,
-    Search
+    Search,
+    Sun,
 } from 'lucide-react';
 
 export const DashboardHeader = () => {
+    const [darkMode, setDarkMode] = useState(false);
+
+    useEffect(() => {
+        if (darkMode) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    }, [darkMode]);
+
     const mockNotifications = [
         {
             id: 1,
@@ -54,20 +66,28 @@ export const DashboardHeader = () => {
                 </div>
 
                 {/* Center Section */}
-                <div className='hidden md:flex flex-1 max-w-md mx-8'>
-                    <form className='relative w-full'>
-                        <Search className='absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground' />
-                        <Input 
-                        placeholder='Search anything...'
-                        className='pl-10 w-full'
+                <div className="hidden md:flex flex-1 max-w-md mx-8">
+                    <form className="relative w-full">
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                        <Input
+                            placeholder="Search anything..."
+                            className="pl-10 w-full"
                         />
                     </form>
                 </div>
 
                 {/* Right Section */}
                 <div className="flex items-center gap-2">
-                    <Button variant="ghost" size="sm">
-                        <Moon className="h-5 w-5" />
+                    <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => setDarkMode(!darkMode)}
+                    >
+                        {darkMode ? (
+                            <Sun className="h-5 w-5" />
+                        ) : (
+                            <Moon className="h-5 w-5" />
+                        )}
                     </Button>
 
                     <Popover>
