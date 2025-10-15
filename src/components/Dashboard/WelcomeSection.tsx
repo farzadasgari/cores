@@ -1,9 +1,9 @@
 export const WelcomeSection = () => {
     return (
-        <div className="bg-gradient-to-r from-primary/90 to-primary/50 rounded-2xl p-8 text-white relative overflow-hidden">
+        <div className="bg-gradient-primary rounded-2xl p-8 text-white relative overflow-hidden">
             <div className="relative z-10">
                 <h1 className="text-3xl font-bold mb-2">
-                    Welcome back, John!👋🏻
+                    Welcome back, John!
                 </h1>
                 <p className="text-white/90 text-lg">
                     Here's what's happening with your business today.
