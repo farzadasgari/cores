@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
+import { Input } from '@/components/ui/input';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -56,6 +57,10 @@ export const DashboardHeader = () => {
                 <div className='hidden md:flex flex-1 max-w-md mx-8'>
                     <form className='relative w-full'>
                         <Search className='absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground' />
+                        <Input 
+                        placeholder='Search anything...'
+                        className='pl-10 w-full'
+                        />
                     </form>
                 </div>
 
