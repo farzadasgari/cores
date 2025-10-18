@@ -53,13 +53,13 @@ const recentOrders = [
 const getStatusColor = (status: string) => {
     switch (status) {
         case 'Completed':
-            return 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900';
+            return 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900 dark:bg-emerald-200 dark:hover:bg-emerald-300 dark:text-emerald-950';
         case 'Pending':
-            return 'bg-amber-100 hover:bg-amber-200 text-amber-900';
+            return 'bg-amber-100 hover:bg-amber-200 text-amber-900 dark:bg-amber-200 dark:hover:bg-amber-300 dark:text-amber-950';
         case 'Failed':
-            return 'bg-red-100 hover:bg-red-200 text-red-900';
+            return 'bg-red-100 hover:bg-red-200 text-red-900 dark:bg-red-200 dark:hover:bg-red-300 dark:text-red-950';
         default:
-            return 'bg-slate-100 hover:bg-slate-200 text-slate-900';
+            return 'bg-slate-100 hover:bg-slate-200 text-slate-900 dark:bg-slate-200 dark:hover:bg-slate-300 dark:text-slate-950';
     }
 };
 

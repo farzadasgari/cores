@@ -53,13 +53,13 @@ const activities = [
 const getTypeColor = (type: string) => {
     switch (type) {
         case 'Complete':
-            return 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900';
+            return 'bg-emerald-100 hover:bg-emerald-200 text-emerald-900 dark:bg-emerald-200 dark:hover:bg-emerald-300 dark:text-emerald-950';
         case 'Update':
-            return 'bg-sky-100 hover:bg-sky-200 text-sky-900';
+            return 'bg-sky-100 hover:bg-sky-200 text-sky-900 dark:bg-sky-200 dark:hover:bg-sky-300 dark:text-sky-950';
         case 'Create':
-            return 'bg-violet-100 hover:bg-violet-200 text-violet-900';
+            return 'bg-violet-100 hover:bg-violet-200 text-violet-900 dark:bg-violet-200 dark:hover:bg-violet-300 dark:text-violet-950';
         default:
-            return 'bg-slate-100 hover:bg-slate-200 text-slate-900';
+            return 'bg-slate-100 hover:bg-slate-200 text-slate-900 dark:bg-slate-200 dark:hover:bg-slate-300 dark:text-slate-950';
     }
 };
 
