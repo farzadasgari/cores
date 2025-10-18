@@ -56,7 +56,7 @@ export const DashboardHeader = () => {
         },
     ];
     return (
-        <header className="fixed top-0 left-0 right-0 h-16 z-50 bg-slate-100 border-b duration-300">
+        <header className="fixed top-0 left-0 right-0 h-16 z-50 bg-background border-b duration-300">
             <div className="flex items-center justify-between h-full px-4">
                 {/* Left Section */}
                 <div className="flex items-center gap-4">
@@ -115,7 +115,7 @@ export const DashboardHeader = () => {
                                     >
                                         <div className="flex items-start gap-3">
                                             <div
-                                                className={`w-2 h-2 rounded-full mt-2 ${notification.unread ? 'bg-primary' : 'bg-slate-300'}`}
+                                                className={`w-2 h-2 rounded-full mt-2 ${notification.unread ? 'bg-primary' : 'bg-muted-foreground/50'}`}
                                             />
                                             <div className="flex-1">
                                                 <p className="text-sm font-medium">
