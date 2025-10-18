@@ -82,6 +82,7 @@ export const DashboardHeader = () => {
                         variant="ghost"
                         size="sm"
                         onClick={() => setDarkMode(!darkMode)}
+                        className="cursor-pointer"
                     >
                         {darkMode ? (
                             <Sun className="h-5 w-5" />
@@ -95,10 +96,10 @@ export const DashboardHeader = () => {
                             <Button
                                 variant="ghost"
                                 size="sm"
-                                className="relative"
+                                className="relative cursor-pointer"
                             >
                                 <Bell className="h-5 w-5" />
-                                <Badge className="absolute -top-1 -right-1 h-4 w-4 rounded-full p-0 bg-primary flex items-center justify-center">
+                                <Badge className="absolute -top-1 -right-1 h-4 w-4 rounded-full p-0 bg-primary flex items-center justify-center text-white font-bold">
                                     3
                                 </Badge>
                             </Button>
@@ -111,7 +112,7 @@ export const DashboardHeader = () => {
                                 {mockNotifications.map((notification) => (
                                     <div
                                         key={notification.id}
-                                        className="p-3 border-b hover:bg-muted/50"
+                                        className="p-3 border-b hover:bg-muted/50 cursor-pointer"
                                     >
                                         <div className="flex items-start gap-3">
                                             <div
@@ -133,7 +134,7 @@ export const DashboardHeader = () => {
                                 <Button
                                     variant="ghost"
                                     size="sm"
-                                    className="w-full"
+                                    className="w-full cursor-pointer"
                                 >
                                     View All Notifications
                                 </Button>
@@ -141,7 +142,11 @@ export const DashboardHeader = () => {
                         </PopoverContent>
                     </Popover>
 
-                    <Button variant="ghost" size="sm">
+                    <Button
+                        variant="ghost"
+                        size="sm"
+                        className="cursor-pointer"
+                    >
                         <Settings className="h-5 w-5" />
                     </Button>
 
@@ -150,7 +155,7 @@ export const DashboardHeader = () => {
                             <Button
                                 variant="ghost"
                                 size="sm"
-                                className="relative"
+                                className="relative cursor-pointer"
                             >
                                 <Avatar className="h-8 w-8">
                                     <AvatarImage
@@ -163,37 +168,46 @@ export const DashboardHeader = () => {
                         </DropdownMenuTrigger>
 
                         <DropdownMenuContent className="w-56" align="end">
-                            <DropdownMenuItem>
+                            <DropdownMenuItem className="cursor-pointer">
                                 <User className="h-4 w-4 mr-2" />
                                 Profile
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem className="cursor-pointer">
                                 <Settings className="h-4 w-4 mr-2" />
                                 Settings
                             </DropdownMenuItem>
 
                             <DropdownMenuSeparator />
 
-                            <DropdownMenuItem asChild>
+                            <DropdownMenuItem
+                                className="cursor-pointer"
+                                asChild
+                            >
                                 <a href="/cores/register">
                                     <UserPlus className="h-4 w-4 mr-2" />
                                     Register
                                 </a>
                             </DropdownMenuItem>
-                            <DropdownMenuItem asChild>
+                            <DropdownMenuItem
+                                className="cursor-pointer"
+                                asChild
+                            >
                                 <a href="/cores/login">
                                     <LogIn className="h-4 w-4 mr-2" />
                                     Login
                                 </a>
                             </DropdownMenuItem>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem className="cursor-pointer">
                                 <LogOut className="h-4 w-4 mr-2" />
                                 Logout
                             </DropdownMenuItem>
 
                             <DropdownMenuSeparator />
 
-                            <DropdownMenuItem asChild>
+                            <DropdownMenuItem
+                                className="cursor-pointer"
+                                asChild
+                            >
                                 <a
                                     href="https://github.com/farzadasgari/cores"
                                     target="_blank"

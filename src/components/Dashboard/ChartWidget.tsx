@@ -10,6 +10,7 @@ import {
     ResponsiveContainer,
     Tooltip,
 } from 'recharts';
+import { ChartNoAxesCombined } from 'lucide-react';
 
 const data = [
     { name: 'Jan', revenue: 4000, users: 2400 },
@@ -32,7 +33,10 @@ export const ChartWidget = () => {
     return (
         <Card>
             <CardHeader className="flex flex-row items-center justify-between">
-                <CardTitle>Performance Overview</CardTitle>
+                <CardTitle className="flex items-center gap-2">
+                    <ChartNoAxesCombined className="h-5 w-5" />
+                    Performance Overview
+                </CardTitle>
                 <div className="flex gap-2">
                     <Button
                         variant={
@@ -40,6 +44,7 @@ export const ChartWidget = () => {
                         }
                         size="sm"
                         onClick={() => setActiveMetric('revenue')}
+                        className="cursor-pointer"
                     >
                         Revenue
                     </Button>
@@ -49,6 +54,7 @@ export const ChartWidget = () => {
                         }
                         size="sm"
                         onClick={() => setActiveMetric('users')}
+                        className="cursor-pointer"
                     >
                         Users
                     </Button>

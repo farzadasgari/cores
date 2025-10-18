@@ -85,7 +85,7 @@ export const DashboardSidebar = () => {
                         <Button
                             key={item.id}
                             variant="ghost"
-                            className="w-full justify-start gap-3 h-10"
+                            className="w-full justify-start gap-3 h-10 cursor-pointer"
                         >
                             <item.icon className="h-5 w-5 flex-shrink-0" />
                             <span className="truncate">{item.label}</span>
@@ -98,7 +98,7 @@ export const DashboardSidebar = () => {
                             <CollapsibleTrigger asChild>
                                 <Button
                                     variant="ghost"
-                                    className="w-full justify-start gap-3 h-10"
+                                    className="w-full justify-start gap-3 h-10 cursor-pointer"
                                 >
                                     <BarChart3 className="h-5 w-5 flex-shrink-0" />
                                     <span className="truncate flex-1 text-left">
@@ -113,7 +113,7 @@ export const DashboardSidebar = () => {
                                         <Button
                                             key={item.id}
                                             variant="ghost"
-                                            className="w-full justify-start gap-3 h-9 ml-6"
+                                            className="w-full justify-start gap-3 h-9 ml-6 cursor-pointer"
                                         >
                                             <item.icon className="h-4 w-4 flex-shrink-0" />
                                             <span className="truncate text-sm">
@@ -132,7 +132,7 @@ export const DashboardSidebar = () => {
                     <div className="space-y-1">
                         <Button
                             variant="ghost"
-                            className="w-full justify-start gap-3 h-9"
+                            className="w-full justify-start gap-3 h-9 cursor-pointer"
                         >
                             <HelpCircle className="h-4 w-4 flex-shrink-0" />
                             <span className="text-sm">Help Center</span>
@@ -140,7 +140,7 @@ export const DashboardSidebar = () => {
 
                         <Button
                             variant="ghost"
-                            className="w-full justify-start gap-3 h-9"
+                            className="w-full justify-start gap-3 h-9 cursor-pointer"
                         >
                             <MessageSquare className="h-4 w-4 flex-shrink-0" />
                             <span className="text-sm">Support</span>

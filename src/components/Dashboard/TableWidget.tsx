@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
+import { ShoppingCart } from 'lucide-react';
 
 const recentOrders = [
     {
@@ -67,8 +68,11 @@ export const TableWidget = () => {
     return (
         <Card>
             <CardHeader className="flex flex-row items-center justify-between">
-                <CardTitle>Recent Orders</CardTitle>
-                <Button variant="outline" size="sm">
+                <CardTitle className="flex items-center gap-2">
+                    <ShoppingCart className="h-5 w-5" />
+                    Recent Orders
+                </CardTitle>
+                <Button variant="outline" size="sm" className="cursor-pointer">
                     View All
                 </Button>
             </CardHeader>

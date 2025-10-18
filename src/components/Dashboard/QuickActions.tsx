@@ -7,6 +7,7 @@ import {
     Settings,
     Upload,
     Users,
+    Milestone,
 } from 'lucide-react';
 
 const actions = [
@@ -22,7 +23,10 @@ export const QuickActions = () => {
     return (
         <Card>
             <CardHeader>
-                <CardTitle>Quick Actions</CardTitle>
+                <CardTitle className="flex items-center gap-2">
+                    <Milestone className="h-5 w-5" />
+                    Quick Actions
+                </CardTitle>
             </CardHeader>
             <CardContent>
                 <div className="grid grid-cols-2 gap-3">
