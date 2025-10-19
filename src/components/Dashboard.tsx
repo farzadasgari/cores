@@ -1,4 +1,4 @@
-// import { useState } from 'react';
+import { useState } from 'react';
 import DashboardFooter from './DashboardFooter';
 import { DashboardHeader } from './DashboardHeader';
 import { DashboardSidebar } from './DashboardSidebar';
@@ -19,6 +19,16 @@ const Dashboard = () => {
     //             break
     //     }
     // }
+
+    const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(true);
+
+    const handleToggleSidebar = () => {
+        setSidebarCollapsed(!sidebarCollapsed);
+    };
+
+    const handleCloseSidebar = () => {
+        setSidebarCollapsed(true);
+    };
 
     return (
         <div className="min-h-screen">

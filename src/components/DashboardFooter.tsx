@@ -1,6 +1,6 @@
 const DashboardFooter = () => {
     return (
-        <footer className="fixed bottom-0 right-0 left-0 bg-background border-t duration-300 px-6 py-4">
+        <footer className="fixed bottom-0 right-0 left-0 bg-background border-t duration-300 px-6 py-4 ml-64">
             <div className="text-center text-sm">
                 CoreS | Admin Panel © 2025 All rights reserved. Made with ❤️ by
                 <a
