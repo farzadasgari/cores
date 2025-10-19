@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
@@ -27,6 +28,7 @@ import {
     Github,
     Search,
     Sun,
+    ChevronDown,
 } from 'lucide-react';
 
 export const DashboardHeader = () => {
@@ -63,17 +65,38 @@ export const DashboardHeader = () => {
                     <Button variant="ghost" size="sm" className="md:hidden">
                         <Menu className="h-5 w-5" />
                     </Button>
-                    <button>
-                        t
+                    <button
+                        className={cn(
+                            'hidden md:flex h-8 w-8 rounded-lg border-2 transition-all duration-300 items-center justify-center',
+                            'hover:bg-primary/10 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20',
+                            'group active:scale-95 relative'
+                        )}
+                    >
+                        <div
+                            className={cn(
+                                'flex items-center justify-center transition-all duration-300',
+                                'group-hover:rotate-13 group-active:rotate-45'
+                            )}
+                        >
+                            <ChevronDown
+                                className={cn(
+                                    'h-4 w-4 -rotate-90 transition-all duration-300',
+                                    'text-muted-foreground group-hover:text-primary group-hover:scale-110'
+                                )}
+                            />
+                        </div>
                     </button>
                     {/* Brand */}
-                    <div className='flex items-center gap-2'>
-                        <div className='w-8 h-8 bg-primary rounded-lg flex items-center justify-center'>
-                            <span className='text-primary-foreground font-bold text-md'>C</span>
+                    <div className="flex items-center gap-2">
+                        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                            <span className="text-primary-foreground font-bold text-md">
+                                C
+                            </span>
                         </div>
-                        <span className='font-bold text-lg hidden sm:block'>CoreS</span>
+                        <span className="font-bold text-lg hidden sm:block">
+                            CoreS
+                        </span>
                     </div>
-
                 </div>
 
                 {/* Center Section */}
