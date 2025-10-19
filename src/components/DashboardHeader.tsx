@@ -63,6 +63,17 @@ export const DashboardHeader = () => {
                     <Button variant="ghost" size="sm" className="md:hidden">
                         <Menu className="h-5 w-5" />
                     </Button>
+                    <button>
+                        t
+                    </button>
+                    {/* Brand */}
+                    <div className='flex items-center gap-2'>
+                        <div>
+                            C
+                        </div>
+                        <span>CoreS</span>
+                    </div>
+
                 </div>
 
                 {/* Center Section */}

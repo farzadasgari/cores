@@ -19,7 +19,7 @@ const stats = [
     },
     {
         title: 'Active Users',
-        value: '1.429',
+        value: '1,429',
         change: '+8.2%',
         trend: 'up',
         icon: Users,
@@ -42,6 +42,7 @@ const stats = [
         color: 'text-purple-500',
     },
 ];
+
 export const StatsCards = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
