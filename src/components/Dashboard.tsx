@@ -26,13 +26,12 @@ const Dashboard = () => {
         setSidebarCollapsed(!sidebarCollapsed);
     };
 
-    const handleCloseSidebar = () => {
-        setSidebarCollapsed(true);
-    };
-
     return (
         <div className="min-h-screen">
-            <DashboardHeader />
+            <DashboardHeader
+                onToggleSidebar={handleToggleSidebar}
+                sidebarCollapsed={sidebarCollapsed}
+            />
 
             <div className="flex">
                 <DashboardSidebar />

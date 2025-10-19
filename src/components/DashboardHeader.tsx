@@ -31,7 +31,15 @@ import {
     ChevronDown,
 } from 'lucide-react';
 
-export const DashboardHeader = () => {
+interface DashboardHeaderProps {
+    onToggleSidebar: () => void;
+    sidebarCollapsed: boolean;
+}
+
+export const DashboardHeader = ({
+    onToggleSidebar,
+    sidebarCollapsed,
+}: DashboardHeaderProps) => {
     const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
@@ -66,10 +74,14 @@ export const DashboardHeader = () => {
                         <Menu className="h-5 w-5" />
                     </Button>
                     <button
+                        onClick={onToggleSidebar}
                         className={cn(
                             'hidden md:flex h-8 w-8 rounded-lg border-2 transition-all duration-300 items-center justify-center',
                             'hover:bg-primary/10 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20',
-                            'group active:scale-95 relative'
+                            'group active:scale-95 relative',
+                            sidebarCollapsed
+                                ? 'border-border/50 bg-background/50'
+                                : 'border-primary/20 bg-primary/5'
                         )}
                     >
                         <div
@@ -78,12 +90,21 @@ export const DashboardHeader = () => {
                                 'group-hover:rotate-13 group-active:rotate-45'
                             )}
                         >
-                            <ChevronDown
-                                className={cn(
-                                    'h-4 w-4 -rotate-90 transition-all duration-300',
-                                    'text-muted-foreground group-hover:text-primary group-hover:scale-110'
-                                )}
-                            />
+                            {sidebarCollapsed ? (
+                                <ChevronDown
+                                    className={cn(
+                                        'h-4 w-4 -rotate-90 transition-all duration-300',
+                                        'text-muted-foreground group-hover:text-primary group-hover:scale-110'
+                                    )}
+                                />
+                            ) : (
+                                <ChevronDown
+                                    className={cn(
+                                        'h-4 w-4 rotate-90 transition-all duration-300',
+                                        'text-muted-foreground group-hover:text-primary group-hover:scale-110'
+                                    )}
+                                />
+                            )}
                         </div>
                     </button>
                     {/* Brand */}
