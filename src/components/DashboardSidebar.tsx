@@ -4,6 +4,7 @@ import {
     CollapsibleTrigger,
     CollapsibleContent,
 } from '@/components/ui/collapsible';
+import { cn } from '@/lib/utils';
 import {
     LayoutDashboard,
     Users,
@@ -23,7 +24,11 @@ import {
     MessageSquare,
 } from 'lucide-react';
 
-export const DashboardSidebar = () => {
+interface DashboardSidebarProps {
+    sidebarCollapsed: boolean;
+}
+
+export const DashboardSidebar = ({ sidebarCollapsed }: DashboardSidebarProps) => {
     const menuItems = [
         {
             id: 'dashboard',
@@ -77,7 +82,11 @@ export const DashboardSidebar = () => {
         },
     ];
     return (
-        <aside className="fixed left-0 top-16 z-50 h-[calc(100vh-4rem)] bg-background border-r duration-300 overflow-hidden w-64">
+        <aside className={cn(
+            "fixed left-0 top-16 z-50 h-[calc(100vh-4rem)] transition-all duration-300 overflow-hidden",
+            "bg-background border-r border-border md:translate-x-0",
+            sidebarCollapsed ? "-translate-x-full md:w-16" : "translate-x-0 w-64"
+        )}>
             <div className="flex flex-col h-full">
                 {/* Navigation */}
                 <nav className="flex-1 px-3 py-4 space-y-2 overflow-y-auto">
