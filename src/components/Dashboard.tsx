@@ -37,10 +37,12 @@ const Dashboard = () => {
             <div className="flex">
                 <DashboardSidebar sidebarCollapsed={sidebarCollapsed} />
                 {/* ml-64 pt-16 min-h-screen flex flex-col overflow-x-hidden */}
-                <main className={cn(
-                    "flex-1 transition-all duration-300 pt-16 pb-6 md:pb-0 ml-0 overflow-y-auto",
-                    sidebarCollapsed ? "md:ml-16" : "md:ml-64"    
-                )}>
+                <main
+                    className={cn(
+                        'flex-1 transition-all duration-300 pt-16 pb-6 md:pb-0 ml-0 overflow-y-auto',
+                        sidebarCollapsed ? 'md:ml-16' : 'md:ml-64'
+                    )}
+                >
                     <div className="flex-1 mb-13">
                         <DashboardContent currentPage={currentPage} />
                     </div>
