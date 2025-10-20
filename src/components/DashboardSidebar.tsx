@@ -28,7 +28,9 @@ interface DashboardSidebarProps {
     sidebarCollapsed: boolean;
 }
 
-export const DashboardSidebar = ({ sidebarCollapsed }: DashboardSidebarProps) => {
+export const DashboardSidebar = ({
+    sidebarCollapsed,
+}: DashboardSidebarProps) => {
     const menuItems = [
         {
             id: 'dashboard',
@@ -82,11 +84,15 @@ export const DashboardSidebar = ({ sidebarCollapsed }: DashboardSidebarProps) =>
         },
     ];
     return (
-        <aside className={cn(
-            "fixed left-0 top-16 z-50 h-[calc(100vh-4rem)] transition-all duration-300 overflow-hidden",
-            "bg-background border-r border-border md:translate-x-0",
-            sidebarCollapsed ? "-translate-x-full md:w-16" : "translate-x-0 w-64"
-        )}>
+        <aside
+            className={cn(
+                'fixed left-0 top-16 z-50 h-[calc(100vh-4rem)] transition-all duration-300 overflow-hidden',
+                'bg-background border-r border-border md:translate-x-0',
+                sidebarCollapsed
+                    ? '-translate-x-full md:w-16'
+                    : 'translate-x-0 w-64'
+            )}
+        >
             <div className="flex flex-col h-full">
                 {/* Navigation */}
                 <nav className="flex-1 px-3 py-4 space-y-2 overflow-y-auto">
@@ -113,7 +119,9 @@ export const DashboardSidebar = ({ sidebarCollapsed }: DashboardSidebarProps) =>
                                     <span className="truncate flex-1 text-left">
                                         Analytics
                                     </span>
-                                    <ChevronDown className="h-4 w-4" />
+                                    {!sidebarCollapsed && (
+                                        <ChevronDown className="h-4 w-4 transition-all " />
+                                    )}
                                 </Button>
                             </CollapsibleTrigger>
                             <CollapsibleContent className="overflow-hidden">
@@ -144,7 +152,9 @@ export const DashboardSidebar = ({ sidebarCollapsed }: DashboardSidebarProps) =>
                             className="w-full justify-start gap-3 h-9 cursor-pointer"
                         >
                             <HelpCircle className="h-4 w-4 flex-shrink-0" />
-                            <span className="text-sm">Help Center</span>
+                            {!sidebarCollapsed && (
+                                <span className="text-sm">Help Center</span>
+                            )}
                         </Button>
 
                         <Button
@@ -152,7 +162,9 @@ export const DashboardSidebar = ({ sidebarCollapsed }: DashboardSidebarProps) =>
                             className="w-full justify-start gap-3 h-9 cursor-pointer"
                         >
                             <MessageSquare className="h-4 w-4 flex-shrink-0" />
-                            <span className="text-sm">Support</span>
+                            {!sidebarCollapsed && (
+                                <span className="text-sm">Support</span>
+                            )}
                         </Button>
                     </div>
                 </div>
