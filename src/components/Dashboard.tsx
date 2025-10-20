@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import DashboardFooter from './DashboardFooter';
+import { DashboardFooter } from './DashboardFooter';
 import { DashboardHeader } from './DashboardHeader';
 import { DashboardSidebar } from './DashboardSidebar';
 import { DashboardContent } from './DashboardContent';
@@ -40,7 +40,7 @@ const Dashboard = () => {
                     <div className="flex-1 mb-13">
                         <DashboardContent currentPage={currentPage} />
                     </div>
-                    <DashboardFooter />
+                    <DashboardFooter sidebarCollapsed={sidebarCollapsed} />
                 </main>
             </div>
         </div>

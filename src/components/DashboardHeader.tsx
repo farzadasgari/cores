@@ -78,7 +78,7 @@ export const DashboardHeader = ({
                         className={cn(
                             'hidden md:flex h-8 w-8 rounded-lg border-2 transition-all duration-300 items-center justify-center',
                             'hover:bg-primary/10 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/20',
-                            'group active:scale-95 relative',
+                            'group active:scale-95 relative cursor-pointer',
                             sidebarCollapsed
                                 ? 'border-border/50 bg-background/50'
                                 : 'border-primary/20 bg-primary/5'
