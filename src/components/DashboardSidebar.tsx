@@ -108,7 +108,7 @@ export const DashboardSidebar = ({
                     ))}
 
                     {/* Analytics */}
-                    <div className="relative">
+                    <div className="relative overflow-hidden">
                         <Collapsible>
                             <CollapsibleTrigger asChild>
                                 <Button
@@ -120,7 +120,7 @@ export const DashboardSidebar = ({
                                         Analytics
                                     </span>
                                     {!sidebarCollapsed && (
-                                        <ChevronDown className="h-4 w-4 transition-all " />
+                                        <ChevronDown className="h-4 w-4" />
                                     )}
                                 </Button>
                             </CollapsibleTrigger>
