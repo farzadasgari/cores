@@ -26,46 +26,45 @@ import {
 
 interface DashboardSidebarProps {
     sidebarCollapsed: boolean;
+    onPageChange: (page: string) => void;
+    currentPage: string;
 }
 
 export const DashboardSidebar = ({
     sidebarCollapsed,
+    onPageChange,
+    currentPage,
 }: DashboardSidebarProps) => {
     const menuItems = [
         {
             id: 'dashboard',
             label: 'Dashboard',
             icon: LayoutDashboard,
-            href: '/',
         },
-        { id: 'users', label: 'Users', icon: Users, href: '/users' },
-        { id: 'orders', label: 'Orders', icon: ShoppingCart, href: '/orders' },
+        { id: 'users', label: 'Users', icon: Users },
+        { id: 'orders', label: 'Orders', icon: ShoppingCart },
         {
             id: 'payments',
             label: 'Payments',
             icon: CreditCard,
-            href: '/payments',
         },
         {
             id: 'notifications',
             label: 'Notifications',
             icon: Bell,
-            href: '/notifications',
         },
         {
             id: 'database',
             label: 'Database',
             icon: Database,
-            href: '/database',
         },
-        { id: 'security', label: 'Security', icon: Shield, href: '/security' },
-        { id: 'tickets', label: 'Tickets', icon: TicketIcon, href: '/tickets' },
-        { id: 'profile', label: 'Profile', icon: User, href: '/profile' },
+        { id: 'security', label: 'Security', icon: Shield },
+        { id: 'tickets', label: 'Tickets', icon: TicketIcon },
+        { id: 'profile', label: 'Profile', icon: User },
         {
             id: 'settings',
             label: 'Settings',
             icon: Settings,
-            href: '/settings',
         },
     ];
 
@@ -99,8 +98,11 @@ export const DashboardSidebar = ({
                     {menuItems.map((item) => (
                         <Button
                             key={item.id}
-                            variant="ghost"
+                            variant={
+                                currentPage == item.id ? 'secondary' : 'ghost'
+                            }
                             className="w-full justify-start gap-3 h-10 cursor-pointer"
+                            onClick={() => onPageChange(item.id)}
                         >
                             <item.icon className="h-5 w-5 flex-shrink-0" />
                             <span className="truncate">{item.label}</span>

@@ -12,7 +12,7 @@ const Dashboard = () => {
         setCurrentPage(page);
     };
 
-    const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(true);
+    const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(false);
 
     const handleToggleSidebar = () => {
         setSidebarCollapsed(!sidebarCollapsed);
@@ -26,7 +26,11 @@ const Dashboard = () => {
                 onPageChange={handlePageChange}
             />
             <div className="flex">
-                <DashboardSidebar sidebarCollapsed={sidebarCollapsed} />
+                <DashboardSidebar
+                    sidebarCollapsed={sidebarCollapsed}
+                    onPageChange={handlePageChange}
+                    currentPage={currentPage}
+                />
                 <main
                     className={cn(
                         'flex-1 transition-all duration-300 pt-16 pb-6 md:pb-0 ml-0 overflow-y-auto',
