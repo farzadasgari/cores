@@ -12,6 +12,14 @@ interface DashboardContentProps {
 export const DashboardContent = ({ currentPage }: DashboardContentProps) => {
     const renderContent = () => {
         switch (currentPage) {
+            case "settings":
+                return (
+                    <div className="space-y-6">Settings Page</div>
+                )
+            case "notifications":
+                return (
+                    <div className="space-y-6">Notifications Page</div>
+                )
             default:
                 return (
                     <div className="space-y-6">
