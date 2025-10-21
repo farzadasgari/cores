@@ -6,18 +6,11 @@ import { DashboardContent } from './DashboardContent';
 import { cn } from '@/lib/utils';
 
 const Dashboard = () => {
-    const currentPage = 'notifications';
-    // const [currentPage, setCurrentPage] = useState("dashboard");
+    const [currentPage, setCurrentPage] = useState<string>('dashboard');
 
-    // const handlePageChange = (page: string) => {
-    //     setCurrentPage(page);
-    //     switch (page) {
-    //         case "dashboard":
-    //         default:
-    //             navigate("/");
-    //             break
-    //     }
-    // }
+    const handlePageChange = (page: string) => {
+        setCurrentPage(page);
+    };
 
     const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(true);
 
@@ -30,6 +23,7 @@ const Dashboard = () => {
             <DashboardHeader
                 onToggleSidebar={handleToggleSidebar}
                 sidebarCollapsed={sidebarCollapsed}
+                onPageChange={handlePageChange}
             />
             <div className="flex">
                 <DashboardSidebar sidebarCollapsed={sidebarCollapsed} />

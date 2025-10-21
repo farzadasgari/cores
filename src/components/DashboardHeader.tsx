@@ -34,11 +34,13 @@ import {
 interface DashboardHeaderProps {
     onToggleSidebar: () => void;
     sidebarCollapsed: boolean;
+    onPageChange: (page: string) => void;
 }
 
 export const DashboardHeader = ({
     onToggleSidebar,
     sidebarCollapsed,
+    onPageChange,
 }: DashboardHeaderProps) => {
     const [darkMode, setDarkMode] = useState(false);
 
@@ -109,11 +111,14 @@ export const DashboardHeader = ({
                     </button>
                     {/* Brand */}
                     <div className="flex items-center gap-2">
-                        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                        <button
+                            onClick={() => onPageChange('dashboard')}
+                            className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center cursor-pointer"
+                        >
                             <span className="text-primary-foreground font-bold text-md">
                                 C
                             </span>
-                        </div>
+                        </button>
                         <span className="font-bold text-lg hidden sm:block">
                             CoreS
                         </span>
@@ -190,6 +195,9 @@ export const DashboardHeader = ({
                                     variant="ghost"
                                     size="sm"
                                     className="w-full cursor-pointer"
+                                    onClick={() =>
+                                        onPageChange('notifications')
+                                    }
                                 >
                                     View All Notifications
                                 </Button>
@@ -201,6 +209,7 @@ export const DashboardHeader = ({
                         variant="ghost"
                         size="sm"
                         className="cursor-pointer"
+                        onClick={() => onPageChange('settings')}
                     >
                         <Settings className="h-5 w-5" />
                     </Button>
