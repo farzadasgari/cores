@@ -13,6 +13,11 @@ export const SettingsHeader = () => {
                         </Badge>
                     </div>
                 </div>
+                <div className="flex items-center gap-2">
+                    <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-200">
+                        Production
+                    </Badge>
+                </div>
             </div>
         </div>
     )
