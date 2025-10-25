@@ -1,7 +1,7 @@
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { AlertTriangle, Save, Search, Undo } from "lucide-react";
+import { Badge } from '@/components/ui/badge';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { AlertTriangle, Save, Search, Undo } from 'lucide-react';
 import {
     AlertDialog,
     AlertDialogTrigger,
@@ -11,8 +11,8 @@ import {
     AlertDialogDescription,
     AlertDialogFooter,
     AlertDialogCancel,
-    AlertDialogAction
-} from "@/components/ui/alert-dialog";
+    AlertDialogAction,
+} from '@/components/ui/alert-dialog';
 
 export const SettingsHeader = () => {
     return (
@@ -28,7 +28,10 @@ export const SettingsHeader = () => {
                     </div>
                 </div>
                 <div className="flex items-center gap-2">
-                    <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-200">
+                    <Badge
+                        variant="outline"
+                        className="bg-emerald-50 text-emerald-700 border-emerald-200"
+                    >
                         Production
                     </Badge>
                 </div>
@@ -46,7 +49,10 @@ export const SettingsHeader = () => {
                 <div className="flex items-center gap-2">
                     <AlertDialog>
                         <AlertDialogTrigger asChild>
-                            <Button variant="outline" className="cursor-pointer">
+                            <Button
+                                variant="outline"
+                                className="cursor-pointer"
+                            >
                                 <Undo className="h-4 w-4 mr-2" />
                                 Discard Changes
                             </Button>
@@ -58,12 +64,17 @@ export const SettingsHeader = () => {
                                     Confirm Discard Changes
                                 </AlertDialogTitle>
                                 <AlertDialogDescription>
-                                    You are about to discard 3 configuration changes.
+                                    You are about to discard 3 configuration
+                                    changes.
                                 </AlertDialogDescription>
                             </AlertDialogHeader>
                             <AlertDialogFooter>
-                                <AlertDialogCancel className="cursor-pointer">Cancel</AlertDialogCancel>
-                                <AlertDialogAction className="cursor-pointer bg-rose-500 hover:bg-rose-500/80">Discard Changes</AlertDialogAction>
+                                <AlertDialogCancel className="cursor-pointer">
+                                    Cancel
+                                </AlertDialogCancel>
+                                <AlertDialogAction className="cursor-pointer bg-rose-500 hover:bg-rose-500/80">
+                                    Discard Changes
+                                </AlertDialogAction>
                             </AlertDialogFooter>
                         </AlertDialogContent>
                     </AlertDialog>
@@ -81,19 +92,24 @@ export const SettingsHeader = () => {
                                     Confirm Save Changes
                                 </AlertDialogTitle>
                                 <AlertDialogDescription>
-                                    You are about to save 3 configuration changes.
-                                    This action will apply the changes to your production environment
-                                    and cannot be undone easily.
+                                    You are about to save 3 configuration
+                                    changes. This action will apply the changes
+                                    to your production environment and cannot be
+                                    undone easily.
                                 </AlertDialogDescription>
                             </AlertDialogHeader>
                             <AlertDialogFooter>
-                                <AlertDialogCancel className="cursor-pointer">Cancel</AlertDialogCancel>
-                                <AlertDialogAction className="cursor-pointer">Save Changes</AlertDialogAction>
+                                <AlertDialogCancel className="cursor-pointer">
+                                    Cancel
+                                </AlertDialogCancel>
+                                <AlertDialogAction className="cursor-pointer">
+                                    Save Changes
+                                </AlertDialogAction>
                             </AlertDialogFooter>
                         </AlertDialogContent>
                     </AlertDialog>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
