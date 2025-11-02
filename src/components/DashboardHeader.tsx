@@ -72,7 +72,12 @@ export const DashboardHeader = ({
             <div className="flex items-center justify-between h-full px-4">
                 {/* Left Section */}
                 <div className="flex items-center gap-4">
-                    <Button variant="ghost" size="sm" className="md:hidden">
+                    <Button
+                        onClick={onToggleSidebar}
+                        variant="ghost"
+                        size="sm"
+                        className="md:hidden"
+                    >
                         <Menu className="h-5 w-5" />
                     </Button>
                     <button
