@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SettingsHeader } from '@/components/Settings/SettingsHeader';
 import { SettingsNavigation } from '@/components/Settings/SettingsNavigation';
+import { SettingsGeneral } from '@/components/Settings/SettingsGeneral';
 
 export const Settings = () => {
     const [activeSection, setActiveSection] = useState<string>('general');
@@ -8,7 +9,7 @@ export const Settings = () => {
     const renderActiveSection = () => {
         switch (activeSection) {
             case 'general':
-                return <span>General Section</span>;
+                return <SettingsGeneral />;
             case 'user-permissions':
                 return <span>Users and Permissions Section</span>;
             case 'integrations':
