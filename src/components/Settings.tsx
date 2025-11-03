@@ -2,6 +2,15 @@ import { useState } from 'react';
 import { SettingsHeader } from '@/components/Settings/SettingsHeader';
 import { SettingsNavigation } from '@/components/Settings/SettingsNavigation';
 import { SettingsGeneral } from '@/components/Settings/SettingsGeneral';
+import { SettingsPermissions } from '@/components/Settings/SettingsPermissions';
+import { SettingsIntegrations } from '@/components/Settings/SettingsIntegrations';
+import { SettingsNotifications } from '@/components/Settings/SettingsNotifications';
+import { SettingsSecurity } from '@/components/Settings/SettingsSecurity';
+import { SettingsAppearance } from '@/components/Settings/SettingsAppearance';
+import { SettingsBilling } from '@/components/Settings/SettingsBilling';
+import { SettingsPerformance } from '@/components/Settings/SettingsPerformance';
+import { SettingsAdvanced } from '@/components/Settings/SettingsAdvanced';
+import { SettingsAudit } from '@/components/Settings/SettingsAudit';
 
 export const Settings = () => {
     const [activeSection, setActiveSection] = useState<string>('general');
@@ -11,23 +20,23 @@ export const Settings = () => {
             case 'general':
                 return <SettingsGeneral />;
             case 'user-permissions':
-                return <span>Users and Permissions Section</span>;
+                return <SettingsPermissions />;
             case 'integrations':
-                return <span>Integrations Section</span>;
+                return <SettingsIntegrations />;
             case 'notifications':
-                return <span>Notifications Section</span>;
+                return <SettingsNotifications />;
             case 'security':
-                return <span>Security Section</span>;
+                return <SettingsSecurity />;
             case 'appearance':
-                return <span>Appearance Section</span>;
+                return <SettingsAppearance />;
             case 'billing':
-                return <span>Billing Section</span>;
+                return <SettingsBilling />;
             case 'performance':
-                return <span>Performance Section</span>;
+                return <SettingsPerformance />;
             case 'advanced':
-                return <span>Advanced Section</span>;
+                return <SettingsAdvanced />;
             case 'audit-log':
-                return <span>Audit-Log Section</span>;
+                return <SettingsAudit />;
         }
     };
     return (
