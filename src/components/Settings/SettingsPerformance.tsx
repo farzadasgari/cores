@@ -1,5 +1,3 @@
 export const SettingsPerformance = () => {
-    return (
-        <>Performance Settings Page</>
-    )
-}
+    return <>Performance Settings Page</>;
+};

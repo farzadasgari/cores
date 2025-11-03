@@ -1,5 +1,3 @@
 export const SettingsPermissions = () => {
-    return (
-        <>Permissions Settings Page</>
-    )
-}
+    return <>Permissions Settings Page</>;
+};

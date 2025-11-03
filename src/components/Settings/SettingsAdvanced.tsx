@@ -1,5 +1,3 @@
 export const SettingsAdvanced = () => {
-    return (
-        <>Advanced Settings Page</>
-    )
-}
+    return <>Advanced Settings Page</>;
+};

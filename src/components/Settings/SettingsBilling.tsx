@@ -1,5 +1,3 @@
 export const SettingsBilling = () => {
-    return (
-        <>Billing Settings Page</>
-    )
-}
+    return <>Billing Settings Page</>;
+};

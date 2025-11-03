@@ -1,5 +1,3 @@
 export const SettingsSecurity = () => {
-    return (
-        <>Security Settings Page</>
-    )
-}
+    return <>Security Settings Page</>;
+};

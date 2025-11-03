@@ -1,5 +1,3 @@
 export const SettingsIntegrations = () => {
-    return (
-        <>Integrations Settings Page</>
-    )
-}
+    return <>Integrations Settings Page</>;
+};

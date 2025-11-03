@@ -1,9 +1,15 @@
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
-import { Upload } from "lucide-react"
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import {
+    Select,
+    SelectTrigger,
+    SelectValue,
+    SelectContent,
+    SelectItem,
+} from '@/components/ui/select';
+import { Upload } from 'lucide-react';
 
 export const SettingsGeneral = () => {
     return (
@@ -63,8 +69,12 @@ export const SettingsGeneral = () => {
                                 </SelectTrigger>
                                 <SelectContent>
                                     <SelectItem value="UTC">UTC</SelectItem>
-                                    <SelectItem value="EST">Eastern Time</SelectItem>
-                                    <SelectItem value="PST">Pacific Time</SelectItem>
+                                    <SelectItem value="EST">
+                                        Eastern Time
+                                    </SelectItem>
+                                    <SelectItem value="PST">
+                                        Pacific Time
+                                    </SelectItem>
                                 </SelectContent>
                             </Select>
                         </div>
@@ -75,10 +85,18 @@ export const SettingsGeneral = () => {
                                     <SelectValue />
                                 </SelectTrigger>
                                 <SelectContent>
-                                    <SelectItem value="USD">USD - US Dollar</SelectItem>
-                                    <SelectItem value="EUR">EUR - Euro</SelectItem>
-                                    <SelectItem value="GBP">GBP - British Pound</SelectItem>
-                                    <SelectItem value="JPY">JPY - Japanese Yen</SelectItem>
+                                    <SelectItem value="USD">
+                                        USD - US Dollar
+                                    </SelectItem>
+                                    <SelectItem value="EUR">
+                                        EUR - Euro
+                                    </SelectItem>
+                                    <SelectItem value="GBP">
+                                        GBP - British Pound
+                                    </SelectItem>
+                                    <SelectItem value="JPY">
+                                        JPY - Japanese Yen
+                                    </SelectItem>
                                 </SelectContent>
                             </Select>
                         </div>
@@ -86,5 +104,5 @@ export const SettingsGeneral = () => {
                 </CardContent>
             </Card>
         </div>
-    )
-}
+    );
+};

@@ -1,5 +1,3 @@
 export const SettingsAudit = () => {
-    return (
-        <>Audit-Log Settings Page</>
-    )
-}
+    return <>Audit-Log Settings Page</>;
+};

@@ -1,5 +1,3 @@
 export const SettingsNotifications = () => {
-    return (
-        <>Notifications Settings Page</>
-    )
-}
+    return <>Notifications Settings Page</>;
+};

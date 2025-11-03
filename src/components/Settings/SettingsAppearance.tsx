@@ -1,5 +1,3 @@
 export const SettingsAppearance = () => {
-    return (
-        <>Appearance Settings Page</>
-    )
-}
+    return <>Appearance Settings Page</>;
+};
