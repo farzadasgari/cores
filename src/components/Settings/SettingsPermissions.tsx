@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-
+import { Button } from '@/components/ui/button';
+import { Trash, Pen } from 'lucide-react';
 export const SettingsPermissions = () => {
     const roles = [
         { name: 'Administrator', users: 3, permissions: ['Full Access'] },
@@ -35,20 +36,46 @@ export const SettingsPermissions = () => {
                                     <p className="text-sm text-muted-foreground">
                                         {role.users} users
                                     </p>
+
+                                    <div className="flex gap-1 mt-1">
+                                        {role.permissions.map((permission) => (
+                                            <Badge
+                                                key={permission}
+                                                variant="secondary"
+                                                className="text-xs"
+                                            >
+                                                {permission}
+                                            </Badge>
+                                        ))}
+                                    </div>
                                 </div>
-                                <div className="flex gap-1">
-                                    {role.permissions.map((permission) => (
-                                        <Badge
-                                            key={permission}
-                                            variant="secondary"
-                                            className="text-xs"
-                                        >
-                                            {permission}
-                                        </Badge>
-                                    ))}
+                                <div className="flex gap-2">
+                                    <Button
+                                        variant="outline"
+                                        size="sm"
+                                        className="cursor-pointer"
+                                    >
+                                        <Pen className="w-4 h-4" />
+                                        Edit
+                                    </Button>
+                                    <Button
+                                        variant="destructive"
+                                        size="sm"
+                                        className="cursor-pointer"
+                                    >
+                                        <Trash className="w-4 h-4" />
+                                        Delete
+                                    </Button>
                                 </div>
                             </div>
                         ))}
+                        <Button
+                            variant="outline"
+                            size="sm"
+                            className="cursor-pointer w-full"
+                        >
+                            Add New Role
+                        </Button>
                     </div>
                 </CardContent>
             </Card>
