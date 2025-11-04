@@ -1,3 +1,5 @@
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+
 export const SettingsPermissions = () => {
     return (
         <div className="space-y-6">
@@ -9,6 +11,12 @@ export const SettingsPermissions = () => {
                     Manage user roles, permissions, and access policies.
                 </p>
             </div>
+
+            <Card>
+                <CardHeader>
+                    <CardTitle>Role Management</CardTitle>
+                </CardHeader>
+            </Card>
         </div>
     );
 };
