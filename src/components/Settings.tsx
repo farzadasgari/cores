@@ -19,7 +19,7 @@ export const Settings = () => {
         switch (activeSection) {
             case 'general':
                 return <SettingsGeneral />;
-            case 'user-permissions':
+            case 'permissions':
                 return <SettingsPermissions />;
             case 'integrations':
                 return <SettingsIntegrations />;
@@ -35,7 +35,7 @@ export const Settings = () => {
                 return <SettingsPerformance />;
             case 'advanced':
                 return <SettingsAdvanced />;
-            case 'audit-log':
+            case 'audit':
                 return <SettingsAudit />;
         }
     };

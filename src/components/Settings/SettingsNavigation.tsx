@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils';
 
 const settingsSections = [
     { id: 'general', label: 'General', icon: '⚙️' },
-    { id: 'user-permissions', label: 'User & Permissions', icon: '👤' },
+    { id: 'permissions', label: 'User & Permissions', icon: '👤' },
     { id: 'integrations', label: 'Integrations', icon: '🔗' },
     { id: 'notifications', label: 'Notifications', icon: '🔔' },
     { id: 'security', label: 'Security', icon: '🛡️' },
@@ -10,7 +10,7 @@ const settingsSections = [
     { id: 'billing', label: 'Billing', icon: '💳' },
     { id: 'performance', label: 'Performance', icon: '📈' },
     { id: 'advanced', label: 'Advanced', icon: '🦾' },
-    { id: 'audit-log', label: 'Audit Log', icon: '🕵' },
+    { id: 'audit', label: 'Audit Log', icon: '🕵' },
 ];
 
 interface SettingsNavigationProps {
