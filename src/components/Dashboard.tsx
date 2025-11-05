@@ -12,7 +12,7 @@ const Dashboard = () => {
         setCurrentPage(page);
     };
 
-    const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(false);
+    const [sidebarCollapsed, setSidebarCollapsed] = useState<boolean>(true);
 
     const handleToggleSidebar = () => {
         setSidebarCollapsed(!sidebarCollapsed);
