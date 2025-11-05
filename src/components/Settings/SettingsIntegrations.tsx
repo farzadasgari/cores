@@ -1,6 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { CircleGauge } from "lucide-react"
 
 export const SettingsIntegrations = () => {
     const integrations = [
@@ -52,6 +55,34 @@ export const SettingsIntegrations = () => {
                             ))
                         }
                     </div>
+                </CardContent>
+            </Card>
+            <Card>
+                <CardHeader>
+                    <CardTitle>API Configuration</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    <div>
+                        <Label htmlFor="webhook">Webhook URL</Label>
+                        <Input
+                        id="webhook"
+                        placeholder="https://your-domain.com/webhook"
+                        className="mt-2"
+                        />
+                    </div>
+                    <div>
+                        <Label htmlFor="api">API Key</Label>
+                        <Input
+                        id="api"
+                        type="password"
+                        placeholder="Enter Your API Key"
+                        className="mt-2"
+                        />
+                    </div>
+                    <Button className="cursor-pointer">
+                        <CircleGauge className="w-4 h-4"/>
+                        Test Connection
+                    </Button>
                 </CardContent>
             </Card>
         </div>
