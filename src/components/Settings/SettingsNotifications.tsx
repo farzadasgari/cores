@@ -17,7 +17,7 @@ export const SettingsNotifications = () => {
                     Notifications Settings
                 </h2>
                 <p className="text-muted-foreground">
-                    Configure notifications channels and templates
+                    Configure notifications channels and templates.
                 </p>
             </div>
 
