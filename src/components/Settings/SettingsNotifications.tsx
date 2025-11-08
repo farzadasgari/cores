@@ -1,6 +1,14 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
+import {
+    Select,
+    SelectContent,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from '@/components/ui/select';
+
 export const SettingsNotifications = () => {
     return (
         <div className="space-y-6">
@@ -143,6 +151,28 @@ export const SettingsNotifications = () => {
                             </p>
                         </div>
                         <Switch id="critical-only" />
+                    </div>
+                </CardContent>
+            </Card>
+
+            <Card>
+                <CardHeader>
+                    <CardTitle>Escalation Rules</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                    <div className="flex items-center justify-between">
+                        <Label htmlFor="escalation">Escalation Time</Label>
+                        <Select>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select escalation time" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="1hour">1 Hour</SelectItem>
+                                <SelectItem value="4hour">4 Hour</SelectItem>
+                                <SelectItem value="24hour">24 Hour</SelectItem>
+                                <SelectItem value="48hour">48 Hour</SelectItem>
+                            </SelectContent>
+                        </Select>
                     </div>
                 </CardContent>
             </Card>
