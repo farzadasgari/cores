@@ -2,7 +2,6 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Switch } from '@/components/ui/switch';
-import { Button } from '@/components/ui/button';
 
 export const SettingsAppearance = () => {
     return (
@@ -63,15 +62,6 @@ export const SettingsAppearance = () => {
                         <Label htmlFor='favicon'>Favicon</Label>
                         <Input
                             id='favicon'
-                            type='file'
-                            className='mt-2'
-                            accept='image/*'
-                        />
-                    </div>
-                    <div>
-                        <Label htmlFor='logo'>Logo</Label>
-                        <Input
-                            id='logo'
                             type='file'
                             className='mt-2'
                             accept='image/*'
