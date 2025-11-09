@@ -19,9 +19,7 @@ export const SettingsAudit = () => {
                 <CardHeader>
                     <CardTitle>Current Plan</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                    
-                </CardContent>
+                <CardContent className="space-y-4"></CardContent>
             </Card>
         </div>
     );

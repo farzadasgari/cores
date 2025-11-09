@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { CircleFadingArrowUp } from "lucide-react"
+import { CircleFadingArrowUp } from 'lucide-react';
 
 export const SettingsBilling = () => {
     return (
@@ -21,18 +21,20 @@ export const SettingsBilling = () => {
                     <CardTitle>Current Plan</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                    <div className='flex items-center justify-between'>
+                    <div className="flex items-center justify-between">
                         <div>
-                            <h3 className='font-medium'>Professional Plan</h3>
-                            <p className='text-sm text-muted-foreground'>$ 99/month</p>
-                            <Badge className='mt-1'>Active</Badge>
+                            <h3 className="font-medium">Professional Plan</h3>
+                            <p className="text-sm text-muted-foreground">
+                                $ 99/month
+                            </p>
+                            <Badge className="mt-1">Active</Badge>
                         </div>
                         <div>
                             <Button
-                            variant="outline"
-                            className='cursor-pointer'
+                                variant="outline"
+                                className="cursor-pointer"
                             >
-                                <CircleFadingArrowUp className='w-5 h-5' />
+                                <CircleFadingArrowUp className="w-5 h-5" />
                                 Upgrade Plan
                             </Button>
                         </div>
@@ -45,25 +47,37 @@ export const SettingsBilling = () => {
                     <CardTitle>Payment Methods</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                    <div className='border rounded-lg p-3'>
-                        <div className='flex items-center justify-between'>
+                    <div className="border rounded-lg p-3">
+                        <div className="flex items-center justify-between">
                             <div>
-                                <p className='font-medium'>•••• •••• •••• 4242</p>
-                                <p className='text-sm text-muted-foreground'>Expires 12/29</p>
+                                <p className="font-medium">
+                                    •••• •••• •••• 4242
+                                </p>
+                                <p className="text-sm text-muted-foreground">
+                                    Expires 12/29
+                                </p>
                             </div>
                             <Badge variant="success">Primary</Badge>
                         </div>
-                        <div className='flex items-center justify-between'>
+                        <div className="flex items-center justify-between">
                             <div>
-                                <p className='font-medium'>•••• •••• •••• 1441</p>
-                                <p className='text-sm text-muted-foreground'>Expires 12/28</p>
+                                <p className="font-medium">
+                                    •••• •••• •••• 1441
+                                </p>
+                                <p className="text-sm text-muted-foreground">
+                                    Expires 12/28
+                                </p>
                             </div>
                             <Badge variant="secondary">Alternative</Badge>
                         </div>
-                        <div className='flex items-center justify-between'>
+                        <div className="flex items-center justify-between">
                             <div>
-                                <p className='font-medium'>•••• •••• •••• 8228</p>
-                                <p className='text-sm text-muted-foreground'>Expires 12/27</p>
+                                <p className="font-medium">
+                                    •••• •••• •••• 8228
+                                </p>
+                                <p className="text-sm text-muted-foreground">
+                                    Expires 12/27
+                                </p>
                             </div>
                             <Badge variant="secondary">Alternative</Badge>
                         </div>
@@ -77,21 +91,21 @@ export const SettingsBilling = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <div>
-                        <Label htmlFor='billing-email'>Billing Email</Label>
+                        <Label htmlFor="billing-email">Billing Email</Label>
                         <Input
-                        id='billing-email'
-                        type='email'
-                        placeholder='billing@company.com'
-                        className='mt-2'
+                            id="billing-email"
+                            type="email"
+                            placeholder="billing@company.com"
+                            className="mt-2"
                         />
                     </div>
                     <div>
-                        <Label htmlFor='tax'>Tax ID</Label>
+                        <Label htmlFor="tax">Tax ID</Label>
                         <Input
-                        id='tax'
-                        type='text'
-                        placeholder='Enter tax identification number'
-                        className='mt-2'
+                            id="tax"
+                            type="text"
+                            placeholder="Enter tax identification number"
+                            className="mt-2"
                         />
                     </div>
                 </CardContent>

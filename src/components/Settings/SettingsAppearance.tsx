@@ -20,33 +20,35 @@ export const SettingsAppearance = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <div>
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-2'>
-                            <Label htmlFor='primary-color'>Primary Color</Label>
-                            <div className='flex gap-2'>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
+                            <Label htmlFor="primary-color">Primary Color</Label>
+                            <div className="flex gap-2">
                                 <Input
-                                    id='primary-color'
-                                    type='color'
-                                    className='w-16 h-10'
+                                    id="primary-color"
+                                    type="color"
+                                    className="w-16 h-10"
                                 />
                                 <Input
-                                    placeholder='#6a2bde'
-                                    type='text'
-                                    className='flex-1'
+                                    placeholder="#6a2bde"
+                                    type="text"
+                                    className="flex-1"
                                 />
                             </div>
                         </div>
-                        <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-2'>
-                            <Label htmlFor='secondary-color'>Secondary Color</Label>
-                            <div className='flex gap-2'>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-2">
+                            <Label htmlFor="secondary-color">
+                                Secondary Color
+                            </Label>
+                            <div className="flex gap-2">
                                 <Input
-                                    id='secondary-color'
-                                    type='color'
-                                    className='w-16 h-10'
+                                    id="secondary-color"
+                                    type="color"
+                                    className="w-16 h-10"
                                 />
                                 <Input
-                                    placeholder='#6a2bde'
-                                    type='text'
-                                    className='flex-1'
+                                    placeholder="#6a2bde"
+                                    type="text"
+                                    className="flex-1"
                                 />
                             </div>
                         </div>
@@ -59,15 +61,15 @@ export const SettingsAppearance = () => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                     <div>
-                        <Label htmlFor='favicon'>Favicon</Label>
+                        <Label htmlFor="favicon">Favicon</Label>
                         <Input
-                            id='favicon'
-                            type='file'
-                            className='mt-2'
-                            accept='image/*'
+                            id="favicon"
+                            type="file"
+                            className="mt-2"
+                            accept="image/*"
                         />
                     </div>
-                    <div className='flex items-center justify-between'>
+                    <div className="flex items-center justify-between">
                         <div>
                             <Label htmlFor="white-label">
                                 White Label Mode
@@ -76,10 +78,10 @@ export const SettingsAppearance = () => {
                                 Remove platform branding
                             </p>
                         </div>
-                        <Switch id="white-label"/>
+                        <Switch id="white-label" />
                     </div>
                 </CardContent>
             </Card>
         </div>
-    )
+    );
 };
