@@ -1,7 +1,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { AlertTriangle, Save, Search, Undo } from 'lucide-react';
+import { AlertTriangle, Save, Search, Undo, Home } from 'lucide-react';
 import {
     AlertDialog,
     AlertDialogTrigger,
@@ -17,6 +17,13 @@ import {
 export const SettingsHeader = () => {
     return (
         <div className="space-y-4">
+            <nav className="text-sm text-muted-foreground mb-1 flex items-center">
+                <span className="hover:text-foreground cursor-pointer flex items-center">
+                    <Home className="w-4 h-4 mr-1" />
+                </span>
+                <span className="mx-2">/</span>
+                <span className="text-foreground font-medium">Settings</span>
+            </nav>
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <div>
                     <h1 className="text-2xl font-bold">Settings</h1>

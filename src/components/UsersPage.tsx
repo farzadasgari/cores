@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { UsersHeader } from '@/components/Users/UsersHeader';
 
 export interface User {
     id: string;
@@ -64,6 +65,11 @@ export const UsersPage = () => {
             employeeId: "CS004",
         },
     ])
-    return <>Users Page</>;
+
+    return (
+        <div className='space-y-6 p-6'>
+            <UsersHeader />
+        </div>
+    );
 };
 
