@@ -4,7 +4,8 @@ import { ChartWidget } from '@/components/Dashboard/ChartWidget';
 import { TableWidget } from '@/components/Dashboard/TableWidget';
 import { QuickActions } from '@/components/Dashboard/QuickActions';
 import { ActivityFeed } from '@/components/Dashboard/ActivityFeed';
-import { Settings } from '@/components/Settings';
+import { SettingsPage } from '@/components/SettingsPage';
+import { UsersPage } from '@/components/UsersPage';
 
 interface DashboardContentProps {
     currentPage: string;
@@ -14,7 +15,7 @@ export const DashboardContent = ({ currentPage }: DashboardContentProps) => {
     const renderContent = () => {
         switch (currentPage) {
             case 'users':
-                return <div className="space-y-6">Users Page</div>;
+                return <UsersPage />;
             case 'orders':
                 return <div className="space-y-6">Orders Page</div>;
             case 'payments':
@@ -30,7 +31,7 @@ export const DashboardContent = ({ currentPage }: DashboardContentProps) => {
             case 'profile':
                 return <div className="space-y-6">Profile Page</div>;
             case 'settings':
-                return <Settings />;
+                return <SettingsPage />;
             default:
                 return (
                     <div className="space-y-6">

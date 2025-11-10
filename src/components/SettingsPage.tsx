@@ -12,7 +12,7 @@ import { SettingsPerformance } from '@/components/Settings/SettingsPerformance';
 import { SettingsAdvanced } from '@/components/Settings/SettingsAdvanced';
 import { SettingsAudit } from '@/components/Settings/SettingsAudit';
 
-export const Settings = () => {
+export const SettingsPage = () => {
     const [activeSection, setActiveSection] = useState<string>('general');
 
     const renderActiveSection = () => {
