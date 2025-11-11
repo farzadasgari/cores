@@ -1,6 +1,8 @@
-import { Home, Plus } from 'lucide-react';
-import { Button } from '../ui/button';
-
+import { Filter, Home, Plus, Trash2 } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input'
+import { Badge } from '@/components/ui/badge';
+import { Search, X } from 'lucide-react';
 export const UsersHeader = () => {
     return (
         <div className="space-y-4">
@@ -26,6 +28,42 @@ export const UsersHeader = () => {
                     <Plus className="h-4 w-4 mr-2" />
                     Add New User
                 </Button>
+            </div>
+
+            <div className='flex flex-col lg:flex-row gap-4'>
+                <div className="relative flex-1 max-w-md">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                    <Input
+                        placeholder="Search users by name, email, or ID..."
+                        className="pl-10"
+                    />
+                    <Button
+                    variant="ghost"
+                    className='absolute right-2 top-1/2 transform -translate-y-1/2 h-6 w-6 p-0'
+                    >
+                        <X className='h-3 w-3' />
+                    </Button>
+                </div>
+
+                <div className='flex items-center gap-2 flex-wrap'>
+                    <div className='flex items-center gap-2 px-2 py-0.5 bg-muted rounded-lg'>
+                        <Badge variant="secondary">3 users Selected</Badge>
+                        <Button
+                        variant="ghost"
+                        size="sm"
+                        className='text-destructive/70 hover:text-destructive cursor-pointer'
+                        >
+                            <Trash2 className='h-4 w-4' />
+                        </Button>
+                    </div>
+                    <Button
+                    variant="outline"
+                    className='cursor-pointer bg-accent'
+                    >
+                        <Filter className='h-4 w-4 mr-2' />
+                        Filters
+                    </Button>
+                </div>
             </div>
         </div>
     );
