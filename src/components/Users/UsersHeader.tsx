@@ -1,8 +1,9 @@
-import { Download, Filter, Home, Plus, Trash2 } from 'lucide-react';
+import { Download, Filter, FunnelX, Home, Plus, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Search, X, FileText, Sheet, FileSpreadsheet } from 'lucide-react';
 export const UsersHeader = () => {
     return (
@@ -64,28 +65,66 @@ export const UsersHeader = () => {
                         <Filter className='h-4 w-4 mr-2' />
                         Filters
                     </Button>
-                </div>
 
-                <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                        <Button variant="outline" className='cursor-pointer'>
-                            <Download className='h-4 w-4 mr-2' />
-                            Export
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button variant="outline" className='cursor-pointer'>
+                                <Download className='h-4 w-4 mr-2' />
+                                Export
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent>
+                            <DropdownMenuItem>
+                                <FileSpreadsheet className="h-4 w-4 mr-1" />
+                                Export as CSV
+                            </DropdownMenuItem>
+                            <DropdownMenuItem>
+                                <FileText className="h-4 w-4 mr-1" />
+                                Export as PDF</DropdownMenuItem>
+                            <DropdownMenuItem>
+                                <Sheet className="h-4 w-4 mr-1" />
+                                Export as Excel</DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                </div>
+            </div>
+            <div className='bg-muted/50 rounded-lg p-4 space-y-4'>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+                    <div>
+                        <label className='text-sm font-medium mb-2 block'>Status</label>
+                        <Select>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select Status" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value='All'>All</SelectItem>
+                                <SelectItem value='Active'>Active</SelectItem>
+                                <SelectItem value='Pending'>Pending</SelectItem>
+                                <SelectItem value='Inactive'>Inactive</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    </div>
+                    <div>
+                        <label className='text-sm font-medium mb-2 block'>Role</label>
+                        <Select>
+                            <SelectTrigger>
+                                <SelectValue placeholder="Select Status" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value='All'>All</SelectItem>
+                                <SelectItem value='Admin'>Admin</SelectItem>
+                                <SelectItem value='Editor'>Editor</SelectItem>
+                                <SelectItem value='Viewer'>Viewer</SelectItem>
+                            </SelectContent>
+                        </Select>
+                    </div>
+                    <div className='flex items-end'>
+                        <Button variant="outlineDestructive" className='w-full'>
+                            <FunnelX />
+                            Clear Filters
                         </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                        <DropdownMenuItem>
-                            <FileSpreadsheet className="h-4 w-4 mr-1" />
-                            Export as CSV
-                        </DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <FileText className="h-4 w-4 mr-1" />
-                            Export as PDF</DropdownMenuItem>
-                        <DropdownMenuItem>
-                            <Sheet className="h-4 w-4 mr-1" />
-                            Export as Excel</DropdownMenuItem>
-                    </DropdownMenuContent>
-                </DropdownMenu>
+                    </div>
+                </div>
             </div>
         </div>
     );
