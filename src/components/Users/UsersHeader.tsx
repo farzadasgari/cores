@@ -1,8 +1,9 @@
-import { Filter, Home, Plus, Trash2 } from 'lucide-react';
+import { Download, Filter, Home, Plus, Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge';
-import { Search, X } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+import { Search, X, FileText, Sheet, FileSpreadsheet } from 'lucide-react';
 export const UsersHeader = () => {
     return (
         <div className="space-y-4">
@@ -38,8 +39,8 @@ export const UsersHeader = () => {
                         className="pl-10"
                     />
                     <Button
-                    variant="ghost"
-                    className='absolute right-2 top-1/2 transform -translate-y-1/2 h-6 w-6 p-0'
+                        variant="ghost"
+                        className='absolute right-2 top-1/2 transform -translate-y-1/2 h-6 w-6 p-0'
                     >
                         <X className='h-3 w-3' />
                     </Button>
@@ -49,21 +50,42 @@ export const UsersHeader = () => {
                     <div className='flex items-center gap-2 px-2 py-0.5 bg-muted rounded-lg'>
                         <Badge variant="secondary">3 users Selected</Badge>
                         <Button
-                        variant="ghost"
-                        size="sm"
-                        className='text-destructive/70 hover:text-destructive cursor-pointer'
+                            variant="ghost"
+                            size="sm"
+                            className='text-destructive/70 hover:text-destructive dark:text-rose-400 dark:hover:text-rose-600 cursor-pointer'
                         >
                             <Trash2 className='h-4 w-4' />
                         </Button>
                     </div>
                     <Button
-                    variant="outline"
-                    className='cursor-pointer bg-accent'
+                        variant="outline"
+                        className='cursor-pointer bg-accent'
                     >
                         <Filter className='h-4 w-4 mr-2' />
                         Filters
                     </Button>
                 </div>
+
+                <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                        <Button variant="outline" className='cursor-pointer'>
+                            <Download className='h-4 w-4 mr-2' />
+                            Export
+                        </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent>
+                        <DropdownMenuItem>
+                            <FileSpreadsheet className="h-4 w-4 mr-1" />
+                            Export as CSV
+                        </DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <FileText className="h-4 w-4 mr-1" />
+                            Export as PDF</DropdownMenuItem>
+                        <DropdownMenuItem>
+                            <Sheet className="h-4 w-4 mr-1" />
+                            Export as Excel</DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
             </div>
         </div>
     );
