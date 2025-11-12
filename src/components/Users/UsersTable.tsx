@@ -1,6 +1,11 @@
-import { Table, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Table, TableBody, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { type User } from "@/components/UsersPage";
 
-export const UsersTable = () => {
+interface UsersTableProps {
+    users: User[];
+}
+
+export const UsersTable = ({ users }: UsersTableProps) => {
     return (
         <div className="space-y-4 w-full">
             <div className="border rounded-lg overflow-hidden">
@@ -17,7 +22,11 @@ export const UsersTable = () => {
                                 <TableHead className="w-32">Actions</TableHead>
                             </TableRow>
                         </TableHeader>
-                        
+                        <TableBody>
+                            <TableRow>
+                                
+                            </TableRow>
+                        </TableBody>
                     </Table>
                 </div>
             </div>
