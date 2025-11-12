@@ -147,7 +147,7 @@ export const UsersHeader = () => {
                         </div>
                     </div>
                     <div className="flex items-end">
-                        <Button variant="outlineDestructive" className="w-full">
+                        <Button variant="outlineDestructive" className="w-full cursor-pointer">
                             <FunnelX />
                             Clear Filters
                         </Button>
