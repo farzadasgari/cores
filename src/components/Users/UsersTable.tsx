@@ -12,6 +12,12 @@ interface UsersTableProps {
 }
 
 export const UsersTable = ({ users }: UsersTableProps) => {
+
+    const formatDate = (dateString: string) => {
+        if (dateString === "Never") return "Never";
+        return new Date(dateString).toLocaleDateString();
+    }
+
     return (
         <div className="space-y-4 w-full">
             <div className="border rounded-lg overflow-hidden">
@@ -32,58 +38,67 @@ export const UsersTable = ({ users }: UsersTableProps) => {
                             </TableRow>
                         </TableHeader>
                         <TableBody>
-                            <TableRow>
-                                <TableCell>
-                                    <Checkbox className="mr-2" /> 1
-                                </TableCell>
-                                <TableCell>
-                                    <div className="flex items-center gap-3">
-                                        <Avatar className="h-8 w-8">
-                                            <AvatarImage src="/cores/avatar/avatar.webp" alt="John Doe" />
-                                            <AvatarFallback>JD</AvatarFallback>
-                                        </Avatar>
-                                        <div className="min-w-0">
-                                            <div className="font-medium truncate">John Doe</div>
-                                            <div>john.doe@company.com</div>
-                                        </div>
-                                    </div>
-                                </TableCell>
-                                <TableCell>
-                                    <Badge variant="outline">Admin</Badge>
-                                </TableCell>
-                                <TableCell>
-                                    IT
-                                </TableCell>
-                                <TableCell>
-                                    <Badge>Active</Badge>
-                                </TableCell>
-                                <TableCell className="text-sm text-muted-foreground">
-                                    2025-10-11T10:30:03
-                                </TableCell>
-                                <TableCell>
-                                    <DropdownMenu>
-                                        <DropdownMenuTrigger asChild>
-                                            <Button variant="ghost" size="sm">
-                                                <MoreHorizontal className="h-4 w-4" />
-                                            </Button>
-                                        </DropdownMenuTrigger>
-                                        <DropdownMenuContent align="end">
-                                            <DropdownMenuItem className="cursor-pointer">
-                                                <Eye className="mr-2 h-4 w-4" />
-                                                View
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem className="cursor-pointer">
-                                                <Edit className="mr-2 h-4 w-4" />
-                                                Edit
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem className="cursor-pointer text-destructive">
-                                                <Trash2 className="mr-2 h-4 w-4" />
-                                                Delete
-                                            </DropdownMenuItem>
-                                        </DropdownMenuContent>
-                                    </DropdownMenu>
-                                </TableCell>
-                            </TableRow>
+                            {
+                                users.map((user) => (
+                                    <TableRow>
+                                        <TableCell>
+                                            <Checkbox className="mr-2" /> {user.id}
+                                        </TableCell>
+                                        <TableCell>
+                                            <div className="flex items-center gap-3">
+                                                <Avatar className="h-8 w-8">
+                                                    <AvatarImage src={user.avatar} alt={user.name} />
+                                                    <AvatarFallback>
+                                                        {user.name
+                                                            .split(' ')
+                                                            .map((n) => n[0])
+                                                            .join('')}
+                                                    </AvatarFallback>
+                                                </Avatar>
+                                                <div className="min-w-0">
+                                                    <div className="font-medium truncate">{user.name}</div>
+                                                    <div>{user.email}</div>
+                                                </div>
+                                            </div>
+                                        </TableCell>
+                                        <TableCell>
+                                            <Badge variant="outline">{user.role}</Badge>
+                                        </TableCell>
+                                        <TableCell>
+                                            {user.department}
+                                        </TableCell>
+                                        <TableCell>
+                                            <Badge>{user.status}</Badge>
+                                        </TableCell>
+                                        <TableCell className="text-sm text-muted-foreground">
+                                            {formatDate(user.lastLogin)}
+                                        </TableCell>
+                                        <TableCell>
+                                            <DropdownMenu>
+                                                <DropdownMenuTrigger asChild>
+                                                    <Button variant="ghost" size="sm">
+                                                        <MoreHorizontal className="h-4 w-4" />
+                                                    </Button>
+                                                </DropdownMenuTrigger>
+                                                <DropdownMenuContent align="end">
+                                                    <DropdownMenuItem className="cursor-pointer">
+                                                        <Eye className="mr-2 h-4 w-4" />
+                                                        View
+                                                    </DropdownMenuItem>
+                                                    <DropdownMenuItem className="cursor-pointer">
+                                                        <Edit className="mr-2 h-4 w-4" />
+                                                        Edit
+                                                    </DropdownMenuItem>
+                                                    <DropdownMenuItem className="cursor-pointer text-destructive">
+                                                        <Trash2 className="mr-2 h-4 w-4" />
+                                                        Delete
+                                                    </DropdownMenuItem>
+                                                </DropdownMenuContent>
+                                            </DropdownMenu>
+                                        </TableCell>
+                                    </TableRow>
+                                ))
+                            }
                         </TableBody>
                     </Table>
                 </div>
