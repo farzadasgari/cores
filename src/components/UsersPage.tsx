@@ -25,7 +25,7 @@ export const UsersPage = () => {
             status: "Active",
             department: "IT",
             lastLogin: "2025-10-11T10:30:03",
-            avatar: "/cores/avatar/avatar1.webp",
+            avatar: "/cores/avatar/avatar.webp",
             phone: "+1 (555) 123-4567",
             employeeId: "CS001",
         },
