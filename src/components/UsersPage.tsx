@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { UsersHeader } from '@/components/Users/UsersHeader';
 import { UsersTable } from '@/components/Users/UsersTable';
 
@@ -16,7 +15,7 @@ export interface User {
 }
 
 export const UsersPage = () => {
-    const [users, setUsers] = useState<User[]>([
+    const users: User[] = [
         {
             id: '1',
             name: 'John Doe',
@@ -65,7 +64,7 @@ export const UsersPage = () => {
             phone: '+1 (555) 456-7890',
             employeeId: 'CS004',
         },
-    ]);
+    ];
 
     return (
         <div className="space-y-6 p-6">
