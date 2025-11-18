@@ -68,23 +68,22 @@ export const UsersPage = () => {
         },
     ];
 
-    const [isAddEditUserModal, setIsAddEditUserModal] = useState<boolean>(false);
+    const [isAddEditUserModal, setIsAddEditUserModal] =
+        useState<boolean>(false);
 
     const handleAddUser = () => {
-        setIsAddEditUserModal(true)
-    }
+        setIsAddEditUserModal(true);
+    };
 
     return (
         <div className="space-y-6 p-6">
-            <UsersHeader
-                onAddUser={handleAddUser}
-            />
+            <UsersHeader onAddUser={handleAddUser} />
 
             <UsersTable users={users} />
 
             <AddEditUserModal
                 isOpen={isAddEditUserModal}
-                onClose={()=>setIsAddEditUserModal(false)}
+                onClose={() => setIsAddEditUserModal(false)}
             />
         </div>
     );
