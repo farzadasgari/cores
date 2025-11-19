@@ -9,7 +9,8 @@ import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { EyeClosed, Upload } from 'lucide-react';
+import { EyeClosed, Upload, Eye } from 'lucide-react';
+import { useState } from 'react';
 
 interface AddEditUserModalProps {
     isOpen: boolean;
@@ -20,6 +21,8 @@ export const AddEditUserModal = ({
     isOpen,
     onClose,
 }: AddEditUserModalProps) => {
+
+    const [showPassword, setShowPassword] = useState<boolean>(false);
     return (
         <Dialog open={isOpen} onOpenChange={onClose}>
             <DialogContent className="max-w-md max-h-[90vh] overflow-y-hidden">
@@ -128,7 +131,9 @@ export const AddEditUserModal = ({
                         <Label htmlFor='password'>Password *</Label>
                         <div className='relative'>
                             <Input
-                                type='password'
+                                type={
+                                    showPassword ? 'text' : 'password'
+                                }
                                 id="password"
                                 name='password'
                                 placeholder='Enter password'
@@ -137,9 +142,14 @@ export const AddEditUserModal = ({
                                 type='button'
                                 variant="ghost"
                                 size="sm"
-                                className='absolute right-2 top-1/2 transform -translate-y-1/2 h6 w-6 p-0'
+                                className="absolute right-0 top-0 h-full px-3"
+                                onClick={() => setShowPassword(!showPassword)}
                             >
-                                <EyeClosed className="h-4 w-4 text-slate-800" />
+                                {showPassword ? (
+                                    <EyeClosed className="h-4 w-4 text-slate-800" />
+                                ) : (
+                                    <Eye className="h-4 w-4 text-slate-800" />
+                                )}
                             </Button>
                         </div>
                     </div>
