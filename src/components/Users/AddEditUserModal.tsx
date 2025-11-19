@@ -172,6 +172,7 @@ export const AddEditUserModal = ({
                             type="button"
                             variant="outlineDestructive"
                             className="flex-1 cursor-pointer"
+                            onClick={onClose}
                         >
                             Cancel
                         </Button>
